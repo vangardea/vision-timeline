@@ -10,19 +10,21 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 h1 { font-size: 16px; font-weight: 500; color: #444; margin-bottom: 0.5rem; }
 .subtitle { font-size: 13px; color: #888; margin-bottom: 2rem; }
 .framing-note { font-size: 13px; color: #555; line-height: 1.7; margin-bottom: 2rem; padding: 14px 16px; border-left: 3px solid #ddd; }
-.legend { display: flex; gap: 12px; margin-bottom: 2rem; flex-wrap: wrap; }
+.legend { display: flex; gap: 12px; margin-bottom: 2rem; flex-wrap: wrap; align-items: center; }
 .legend-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: #666; }
 .legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
 .legend-diamond { width: 10px; height: 10px; background: #7F77DD; transform: rotate(45deg); flex-shrink: 0; }
-.legend-pill { font-size: 10px; font-weight: 500; padding: 2px 8px; border-radius: 20px; background: #B5D4F4; color: #0C447C; }
+.legend-pill { font-size: 10px; font-weight: 500; padding: 2px 8px; border-radius: 20px; }
 .track { position: relative; padding-left: 32px; }
 .track::before { content: ''; position: absolute; left: 7px; top: 0; bottom: 0; width: 1px; background: #e0e0e0; }
 .entry { position: relative; margin-bottom: 6px; }
 .entry-dot { position: absolute; left: -25px; top: 14px; width: 10px; height: 10px; border-radius: 50%; }
+.entry-dot-hollow { position: absolute; left: -25px; top: 14px; width: 10px; height: 10px; border-radius: 50%; background: #fff; border: 2px solid #1D9E75; }
+.entry-dot-split { position: absolute; left: -25px; top: 14px; width: 10px; height: 10px; }
 .entry-diamond { position: absolute; left: -26px; top: 13px; width: 10px; height: 10px; background: #7F77DD; transform: rotate(45deg); }
 .entry-card { border: 0.5px solid #e5e5e5; border-radius: 8px; background: #fff; overflow: hidden; cursor: pointer; transition: border-color 0.15s; }
 .entry-card.blueprint { border: 0.5px dashed #7F77DD; background: #EEEDFE; }
-.entry-card.whatnext { border: 0.5px dashed #ddd; background: #f9f9f9; }
+.entry-card.whatnext { border: 0.5px dashed #ddd; background: #f9f9f9; cursor: default; }
 .entry-card:hover { border-color: #ccc; }
 .entry-card.blueprint:hover { border-color: #534AB7; }
 .entry-card.open { border-color: #aaa; }
@@ -35,7 +37,8 @@ h1 { font-size: 16px; font-weight: 500; color: #444; margin-bottom: 0.5rem; }
 .entry-title { font-size: 13px; font-weight: 500; color: #1a1a1a; line-height: 1.4; flex: 1; }
 .entry-card.blueprint .entry-title { color: #3C3489; }
 .entry-card.whatnext .entry-title { color: #999; font-style: italic; }
-.comms-pill { font-size: 10px; font-weight: 500; padding: 2px 8px; border-radius: 20px; background: #B5D4F4; color: #0C447C; white-space: nowrap; flex-shrink: 0; }
+.member-pill { font-size: 10px; font-weight: 500; padding: 2px 8px; border-radius: 20px; background: #B5D4F4; color: #0C447C; white-space: nowrap; flex-shrink: 0; }
+.staff-pill { font-size: 10px; font-weight: 500; padding: 2px 8px; border-radius: 20px; background: #FAC775; color: #412402; white-space: nowrap; flex-shrink: 0; }
 .entry-body { padding: 0 14px 12px; border-top: 0.5px solid #e5e5e5; }
 .entry-card.blueprint .entry-body { border-top: 0.5px dashed #AFA9EC; background: #EEEDFE; }
 .entry-body p { font-size: 13px; color: #555; line-height: 1.6; margin-top: 10px; }
@@ -68,7 +71,8 @@ h1 { font-size: 16px; font-weight: 500; color: #444; margin-bottom: 0.5rem; }
   <div class="legend-item"><div class="legend-dot" style="background:#1D9E75"></div>open question</div>
   <div class="legend-item"><div class="legend-dot" style="background:#D85A30"></div>tension</div>
   <div class="legend-item"><div class="legend-diamond"></div><span style="font-size:12px;color:#666;margin-left:4px;">original design</span></div>
-  <div class="legend-item"><div class="legend-pill">member-facing</div></div>
+  <div class="legend-item"><span class="legend-pill" style="background:#B5D4F4;color:#0C447C;">member-facing</span></div>
+  <div class="legend-item"><span class="legend-pill" style="background:#FAC775;color:#412402;">staff-facing</span></div>
 </div>
 
 <div class="track" id="track"></div>
@@ -76,10 +80,17 @@ h1 { font-size: 16px; font-weight: 500; color: #444; margin-bottom: 0.5rem; }
 <script>
 const entries = [
   {
-    date: "Original design",
-    title: "Strategic planning process: five phases, participatory by design.",
-    type: "blueprint", comms: false,
-    body: "The process was triggered by a genuine organizational need: growth had stalled since 2021, the ecosystem had changed, and a new CEO required a refreshed strategy. The design was exploratory and participatory — member voices were intended to shape direction throughout, not just inform it.",
+    date: "November 2024",
+    title: "Dara Parker joins Toniic as CEO.",
+    type: "event", member: false, staff: false,
+    body: "Dara Parker joins Toniic as CEO, succeeding Adam Bendell.",
+    annotations: []
+  },
+  {
+    date: "February 2025",
+    title: "Strategic planning process begins: five phases, participatory by design.",
+    type: "blueprint", member: false, staff: false,
+    body: "The process was triggered by a genuine organizational need: growth had stalled since 2021, the ecosystem had changed, and a new CEO required a refreshed strategy. It also marked the conclusion of Toniic's previous three-year strategic plan. The design was exploratory and participatory — member voices were intended to shape direction throughout, not just inform it.",
     phases: [
       { label: "Phase 1: Preparation (Feb–Mar 2025)", skipped: false },
       { label: "Phase 2: Discovery — member interviews (Apr–Jun 2025)", skipped: false },
@@ -93,16 +104,9 @@ const entries = [
     ]
   },
   {
-    date: "February 2025",
-    title: "Strategic planning process begins.",
-    type: "event", comms: false,
-    body: "Strategic planning process begins. Phase 1 scope defined: competitive landscape, attrition analysis, member interviews.",
-    annotations: []
-  },
-  {
     date: "Early 2025",
     title: "IWF engaged as design research partner.",
-    type: "event", comms: false,
+    type: "event", member: false, staff: false,
     body: "InWithForward engaged to run a participatory design research process alongside the strategic planning work.",
     annotations: [
       { type: "question", label: "Open question", text: "The exact timing and terms of IWF's engagement aren't documented. When were they brought in, and how was their scope defined relative to the strategic planning process?" },
@@ -112,7 +116,7 @@ const entries = [
   {
     date: "April 2025",
     title: "IWF launches Toniic Shift recruitment page.",
-    type: "event", comms: false,
+    type: "event", member: false, staff: false,
     body: "IWF launches the Toniic Shift recruitment page, inviting past, present, and prospective members to participate in design research interviews. All three IWF phases — Discover, Design, Develop — are described as ahead.",
     annotations: [
       { type: "note", label: "Note", text: "At this point, co-design and prototyping with members are explicitly planned and described as ahead." }
@@ -121,7 +125,7 @@ const entries = [
   {
     date: "Spring–Summer 2025",
     title: "Design research begins. Member interviews and Toniic Shift booklet.",
-    type: "event", comms: false,
+    type: "event", member: false, staff: false,
     body: "15 member interviews conducted using IWF's design research tools. The Toniic Shift booklet produced: 10 member segments, 11 insights, and 4 future scenarios presented explicitly as open provocations — starting points for further inquiry, not recommendations.",
     annotations: [
       { type: "note", label: "Note", text: "The four scenarios are provocations designed to open inquiry with members — not conclusions to be selected by leadership." }
@@ -130,7 +134,7 @@ const entries = [
   {
     date: "Summer–Fall 2025",
     title: "What happened between the research and the board retreat?",
-    type: "gap", comms: false,
+    type: "unknown", member: false, staff: false,
     body: "The original design called for concept testing and strategic framing with members in this period. What actually took place isn't something I have visibility into.",
     annotations: [
       { type: "question", label: "Open question", text: "The original design called for interactive workshops, 3–5 strategic prototypes tested with members, and a playback session before the board retreat. I'd love to understand what this period looked like in practice — this is one of the parts of the story I most want to fill in." }
@@ -139,7 +143,7 @@ const entries = [
   {
     date: "October 22–24, 2025",
     title: "Board Retreat. Strategic options presented.",
-    type: "event", comms: false,
+    type: "event", member: false, staff: false,
     body: "Board Retreat. Strategic options presented and discussed.",
     annotations: [
       { type: "question", label: "Open question", text: "What exactly was presented at the retreat, and what form did the alignment take? This is one of the most important questions in understanding how the process evolved — I'd love to understand this better." },
@@ -149,7 +153,7 @@ const entries = [
   {
     date: "Oct–Dec 2025",
     title: "Vision takes shape. Selective sharing begins.",
-    type: "gap", comms: false,
+    type: "gap", member: false, staff: false,
     body: "In the period following the board retreat, the 'From Membership to Movement' vision comes together.",
     annotations: [
       { type: "gap", label: "Gap", text: "How the vision was developed in this period — who shaped it, what role the board played, how it was drafted — isn't documented." },
@@ -157,23 +161,33 @@ const entries = [
     ]
   },
   {
+    date: "November–December 2025",
+    title: "Vision first presented to staff. Mixed reactions.",
+    type: "tension", member: false, staff: true,
+    body: "Staff are presented with the emerging vision for the first time.",
+    annotations: [
+      { type: "tension", label: "Tension", text: "Reactions were mixed. Some staff were energized. Others found the language difficult — terms like 'systems change' were unfamiliar to some team members. Some felt the vision represented too sharp a departure from current work, raised questions about whether there was a viable business model behind it, and at least one person experienced it as an implicit critique of how they'd been working." },
+      { type: "note", label: "Note", text: "This is an early signal of a staff culture and change management question that runs through the whole process — one that hasn't yet been formally addressed." }
+    ]
+  },
+  {
     date: "December 1, 2025",
     title: "First signal of emerging direction in a Pulse.",
-    type: "event", comms: true,
+    type: "event", member: true, staff: false,
     body: "First traceable mention in a Pulse of an 'emerging strategic direction.' References an upcoming Townhall where Dara will offer 'a glimpse of where we're headed in 2026.' Vision not named directly.",
     annotations: []
   },
   {
     date: "December 17–18, 2025",
     title: "Toniic Townhall. First verbal presentation of the vision to members.",
-    type: "event", comms: true,
+    type: "event", member: true, staff: false,
     body: "Two Townhall sessions across time zones. Approximately 15 people attend. Dara presents the 'From Membership to Movement' framing verbally for the first time. No document shared publicly.",
     annotations: []
   },
   {
     date: "Late December 2025",
     title: "Year-end letter. 'From Membership to Movement' named publicly for the first time.",
-    type: "event", comms: true,
+    type: "event", member: true, staff: false,
     body: "Year-end letter from Dara sent to all members. Introduces 'From Membership to Movement' explicitly. Members invited to AGG in Mérida as 'one of the key places where we begin co-designing this next chapter.'",
     annotations: [
       { type: "note", label: "Note", text: "Members are invited to 'begin co-designing' at the AGG — language that implies the vision is still open. In practice the vision is already substantially formed at this point." }
@@ -182,21 +196,37 @@ const entries = [
   {
     date: "January 19, 2026",
     title: "'Emerging vision' named explicitly in a Pulse for the first time.",
-    type: "event", comms: true,
+    type: "event", member: true, staff: false,
     body: "Ocean Working Group event description states Dara will share 'an overview of the emerging vision at Toniic.' First explicit naming in a Pulse.",
     annotations: []
   },
   {
     date: "January 21, 2026",
     title: "Ocean Working Group. First working group presentation of the vision.",
-    type: "event", comms: true,
+    type: "event", member: true, staff: false,
     body: "Dara presents the emerging vision in the context of the Sea Forward collective action initiative — the first working group where the vision is formally introduced to members.",
     annotations: []
   },
   {
-    date: "February 10–14, 2026",
+    date: "February 9, 2026",
+    title: "Daniela joins as Director of Strategic Communications.",
+    type: "event", member: false, staff: false,
+    body: "Daniela joins Toniic.",
+    annotations: []
+  },
+  {
+    date: "February 15–17, 2026",
+    title: "Staff retreat. Vision socialized. Cautious optimism.",
+    type: "event", member: false, staff: true,
+    body: "Dara socializes the vision with staff ahead of the AGG. Staff are asked to read the vision document before the retreat.\n\nAt the retreat, the team does a high-level introduction to systems thinking and maps current Toniic initiatives on a quadrant — one axis representing capacity, the other closeness to the vision.\n\nStaff respond well to the concretizing exercise — mapping existing work against the vision helps make it feel more tangible. Staff come out of the retreat cautiously expectant, less unsettled than after the initial November/December presentation.",
+    annotations: [
+      { type: "gap", label: "Gap", text: "The connection between what was mapped at the retreat and what came next isn't formally documented. The clearest link is to Dario's pilots proposal, but that relationship is informal rather than explicit — the quadrant mapping doesn't appear to have fed into a structured next step." }
+    ]
+  },
+  {
+    date: "February 19–22, 2026",
     title: "Annual Global Gathering, Mérida. Vision presented. IWF runs sessions.",
-    type: "event", comms: true,
+    type: "event", member: true, staff: false,
     body: "Approximately 50 members attend. Dara opens the conference with a presentation of the emerging vision — close to the current version — though members were not specifically primed to expect an organizational strategy conversation alongside the usual conference programming.\n\nIWF runs sessions: games and exercises to surface member values, drawing on research materials. Three co-design and prototyping sessions introduced the concept of prototyping. These were optional rather than required — attendance was uneven.\n\nToward the end of the conference, a session explaining IWF's design research methodology was added — not originally planned. Member response was positive.",
     annotations: [
       { type: "note", label: "Member reaction", text: "Some members worried the vision would mean being compelled to fund things they hadn't chosen — a misread that the collective action framing hadn't anticipated. The vision was experienced as a bigger shift than intended." },
@@ -205,16 +235,21 @@ const entries = [
     ]
   },
   {
-    date: "February 2026",
-    title: "Daniela joins as Director of Strategic Communications.",
-    type: "event", comms: false,
-    body: "Daniela joins Toniic. Immediately attends the AGG in Mérida.",
-    annotations: []
+    date: "Ongoing — member feedback",
+    title: "A pattern of member concerns surfaces across touchpoints.",
+    type: "tension", member: true, staff: false,
+    body: "Across the Townhall, AGG, and informal feedback, a consistent set of concerns emerges from members.",
+    annotations: [
+      { type: "tension", label: "Concern 1", text: "Implementability — members question whether the vision is practically achievable. The ambition feels large relative to Toniic's current capacity and resources." },
+      { type: "tension", label: "Concern 2", text: "Expanding the circle — members value Toniic as a wealth-holder only space. The idea of bringing in non-wealth-holders is perceived as a threat to psychological safety, even though the vision's intention is nuanced on this point." },
+      { type: "tension", label: "Concern 3", text: "Collective action framing — some members read 'collective action' as politically charged or as a mechanism that would compel them to fund things they haven't chosen. This is a misread of the vision but a persistent one." },
+      { type: "tension", label: "Concern 4", text: "Perceived magnitude of shift — despite framing the vision as a maturation rather than a pivot, members experience it as a significant departure from what Toniic has been." }
+    ]
   },
   {
     date: "February–March 2026",
     title: "Two documents emerge that reflect different assumptions about where things stand.",
-    type: "tension", comms: false,
+    type: "tension", member: false, staff: false,
     body: "In roughly the same period, two significant pieces of work are produced independently.",
     annotations: [
       { type: "tension", label: "Document 1", text: "Dario's 2026 Vision Implementation Proposal (early draft) outlines 7 pilots and is oriented toward implementation — here is what we are building, here is who owns what. It assumes the vision is ready to be operationalized." },
@@ -225,14 +260,14 @@ const entries = [
   {
     date: "March 16, 2026",
     title: "Pulse. Dara writes intro directly. April 1 announced.",
-    type: "event", comms: true,
+    type: "event", member: true, staff: false,
     body: "Dara writes the Pulse intro directly for the first time. Names the emerging vision conversation explicitly. April 1 session announced — Americas/EMEA: April 1; APAC: April 2.",
     annotations: []
   },
   {
-    date: "March 2026",
-    title: "A framework for the work begins to take shape.",
-    type: "event", comms: false,
+    date: "Mid-March 2026",
+    title: "Conversations about a framework and staff training begin.",
+    type: "event", member: false, staff: false,
     body: "Dara and Sarah are working toward a framework to organize the vision work — drawing on behavioral change principles to structure how Toniic supports members and staff. The framework has multiple layers: organizing by impact goal, and by behavioral change strategy (strengthening motivation, building capability, creating opportunities to practice).\n\nAlongside this, a staff training oriented around a learning approach is being developed — with the possibility of recording it for wider use. Both the framework and the training are still being refined.\n\nA clearer distinction is also being explored between 'Toniic business as usual' and a separate protected space for experimentation — so that not everything feels like it's in flux at once.",
     annotations: [
       { type: "question", label: "Open question", text: "How will the framework be finalized, shared, and used to organize the pilots and other work? What is the timeline for the staff training?" }
@@ -241,7 +276,7 @@ const entries = [
   {
     date: "April 1–2, 2026 (upcoming)",
     title: "Virtual member session. Vision and design research presented.",
-    type: "event", comms: true,
+    type: "event", member: true, staff: false,
     body: "90-minute virtual session. Dara and IWF present. Design research shared with members for the first time. Vision presented. Session focused on visibility and member awareness — IWF will use interactive exercises to create space for engagement. APAC version on April 2.",
     annotations: [
       { type: "question", label: "Open question", text: "What happens after April 1? Who captures what members said? How does it feed into what comes next?" },
@@ -251,14 +286,14 @@ const entries = [
   {
     date: "April 2, 2026 (upcoming)",
     title: "Board meeting.",
-    type: "event", comms: false,
+    type: "event", member: false, staff: false,
     body: "Board meeting takes place. April 1 session will have occurred just prior.",
     annotations: []
   },
   {
     date: "Beyond April 2026",
     title: "What next?",
-    type: "whatnext", comms: false,
+    type: "whatnext", member: false, staff: false,
     body: null, annotations: []
   }
 ];
@@ -271,26 +306,42 @@ entries.forEach((entry, i) => {
   const isBlueprint = entry.type === "blueprint";
   const isWhatnext = entry.type === "whatnext";
   const hasBody = (entry.body && entry.body.trim()) || (entry.annotations && entry.annotations.length > 0) || (entry.phases && entry.phases.length > 0);
+
+  const hasGap = entry.annotations && entry.annotations.some(a => a.type === "gap");
+  const hasQuestion = entry.annotations && entry.annotations.some(a => a.type === "question");
+  const isSplit = entry.type !== "unknown" && hasGap && hasQuestion;
+
   const dotColor = isBlueprint || isWhatnext ? null :
+    entry.type === "unknown" ? null :
+    isSplit ? null :
     entry.type === "tension" ? "#D85A30" :
     entry.type === "gap" ? "#EF9F27" :
-    entry.annotations && entry.annotations.some(a => a.type === "gap") ? "#EF9F27" :
-    entry.annotations && entry.annotations.some(a => a.type === "question") ? "#1D9E75" : "#888780";
+    hasGap ? "#EF9F27" :
+    hasQuestion ? "#1D9E75" : "#888780";
+
+  const splitSvg = `<svg width="10" height="10" viewBox="0 0 10 10" style="position:absolute;left:-25px;top:14px;"><circle cx="5" cy="5" r="5" fill="#EF9F27"/><path d="M5 0 A5 5 0 0 1 5 10 Z" fill="#1D9E75"/></svg>`;
+
   const dotHtml = isBlueprint ? `<div class="entry-diamond"></div>` :
     isWhatnext ? `<div class="entry-dot" style="background:#ccc;"></div>` :
+    entry.type === "unknown" ? `<div class="entry-dot-hollow"></div>` :
+    isSplit ? splitSvg :
     `<div class="entry-dot" style="background:${dotColor};"></div>`;
-  const commsPill = entry.comms ? `<span class="comms-pill">member-facing</span>` : '';
+
+  const memberPill = entry.member ? `<span class="member-pill">member-facing</span>` : '';
+  const staffPill = entry.staff ? `<span class="staff-pill">staff-facing</span>` : '';
+
   const phasesHtml = entry.phases ? `<div class="phase-row">${entry.phases.map(p => `<span class="phase-pill${p.skipped ? ' skipped' : ''}">${p.label}</span>`).join('')}</div>` : '';
   const annotationsHtml = entry.annotations ? entry.annotations.map(a => `<div class="gap-box ${a.type}"><div class="gap-label">${a.label}</div>${a.text}</div>`).join('') : '';
   const bodyContent = (entry.body && entry.body.trim()) ? `<p>${entry.body.replace(/\n\n/g, '</p><p>')}</p>` : '';
+
   el.innerHTML = `
     ${dotHtml}
     <div class="entry-card${isBlueprint ? ' blueprint' : ''}${isWhatnext ? ' whatnext' : ''}" ${hasBody ? `data-idx="${i}"` : ''}>
       <div class="entry-header">
         <span class="entry-date">${entry.date}</span>
         <span class="entry-title">${entry.title}</span>
-        ${commsPill}
-        ${hasBody ? '<span class="chevron">▼</span>' : ''}
+        ${memberPill}${staffPill}
+        ${hasBody ? '<span class="chevron">&#9660;</span>' : ''}
       </div>
       ${hasBody ? `<div class="entry-body" style="display:none;">${bodyContent}${phasesHtml}${annotationsHtml}</div>` : ''}
     </div>`;
