@@ -29,7 +29,10 @@ h1 { font-size: 16px; font-weight: 500; color: #444; margin-bottom: 0.5rem; }
 .entry-card.blueprint:hover { border-color: #534AB7; }
 .entry-card.open { border-color: #aaa; }
 .entry-card.blueprint.open { border-color: #534AB7; }
-.entry-header { display: flex; align-items: center; gap: 8px; padding: 10px 14px; flex-wrap: wrap; min-height: 44px; }
+.entry-header { display: flex; align-items: baseline; gap: 8px; padding: 10px 14px; flex-wrap: nowrap; }
+.entry-header-right { display: flex; flex-direction: column; gap: 4px; flex: 1; min-width: 0; }
+.entry-header-top { display: flex; align-items: baseline; gap: 8px; width: 100%; }
+.entry-header-pills { display: flex; gap: 6px; flex-wrap: wrap; }
 .entry-card.blueprint .entry-header { background: #EEEDFE; }
 .entry-card.whatnext .entry-header { background: #f9f9f9; }
 .entry-date { font-size: 11px; font-weight: 500; color: #999; white-space: nowrap; width: 160px; min-width: 160px; flex-shrink: 0; }
@@ -334,14 +337,20 @@ entries.forEach((entry, i) => {
   const annotationsHtml = entry.annotations ? entry.annotations.map(a => `<div class="gap-box ${a.type}"><div class="gap-label">${a.label}</div>${a.text}</div>`).join('') : '';
   const bodyContent = (entry.body && entry.body.trim()) ? `<p>${entry.body.replace(/\n\n/g, '</p><p>')}</p>` : '';
 
+  const pillsHtml = (memberPill || staffPill) ? `<div class="entry-header-pills">${memberPill}${staffPill}</div>` : '';
+
   el.innerHTML = `
     ${dotHtml}
     <div class="entry-card${isBlueprint ? ' blueprint' : ''}${isWhatnext ? ' whatnext' : ''}" ${hasBody ? `data-idx="${i}"` : ''}>
       <div class="entry-header">
         <span class="entry-date">${entry.date}</span>
-        <span class="entry-title">${entry.title}</span>
-        ${memberPill}${staffPill}
-        ${hasBody ? '<span class="chevron">&#9660;</span>' : ''}
+        <div class="entry-header-right">
+          <div class="entry-header-top">
+            <span class="entry-title">${entry.title}</span>
+            ${hasBody ? '<span class="chevron">&#9660;</span>' : ''}
+          </div>
+          ${pillsHtml}
+        </div>
       </div>
       ${hasBody ? `<div class="entry-body" style="display:none;">${bodyContent}${phasesHtml}${annotationsHtml}</div>` : ''}
     </div>`;
