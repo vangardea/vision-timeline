@@ -29,17 +29,17 @@ h1 { font-size: 16px; font-weight: 500; color: #444; margin-bottom: 0.5rem; }
 .entry-card.blueprint:hover { border-color: #534AB7; }
 .entry-card.open { border-color: #aaa; }
 .entry-card.blueprint.open { border-color: #534AB7; }
-.entry-header { display: flex; align-items: center; gap: 8px; padding: 10px 14px; flex-wrap: wrap; }
+.entry-header { display: flex; align-items: center; gap: 8px; padding: 10px 14px; flex-wrap: wrap; min-height: 44px; }
 .entry-card.blueprint .entry-header { background: #EEEDFE; }
 .entry-card.whatnext .entry-header { background: #f9f9f9; }
-.entry-date { font-size: 11px; font-weight: 500; color: #999; white-space: nowrap; min-width: 110px; }
+.entry-date { font-size: 11px; font-weight: 500; color: #999; white-space: nowrap; width: 160px; min-width: 160px; flex-shrink: 0; }
 .entry-card.blueprint .entry-date { color: #534AB7; }
-.entry-title { font-size: 13px; font-weight: 500; color: #1a1a1a; line-height: 1.4; flex: 1; }
+.entry-title { font-size: 13px; font-weight: 500; color: #1a1a1a; line-height: 1.4; flex: 1; min-width: 0; }
 .entry-card.blueprint .entry-title { color: #3C3489; }
 .entry-card.whatnext .entry-title { color: #999; font-style: italic; }
 .member-pill { font-size: 10px; font-weight: 500; padding: 2px 8px; border-radius: 20px; background: #B5D4F4; color: #0C447C; white-space: nowrap; flex-shrink: 0; }
 .staff-pill { font-size: 10px; font-weight: 500; padding: 2px 8px; border-radius: 20px; background: #FAC775; color: #412402; white-space: nowrap; flex-shrink: 0; }
-.entry-body { padding: 0 14px 12px; border-top: 0.5px solid #e5e5e5; }
+.entry-body { padding: 5px 14px 17px; border-top: 0.5px solid #e5e5e5; }
 .entry-card.blueprint .entry-body { border-top: 0.5px dashed #AFA9EC; background: #EEEDFE; }
 .entry-body p { font-size: 13px; color: #555; line-height: 1.6; margin-top: 10px; }
 .entry-card.blueprint .entry-body p { color: #3C3489; }
@@ -70,7 +70,7 @@ h1 { font-size: 16px; font-weight: 500; color: #444; margin-bottom: 0.5rem; }
   <div class="legend-item"><div class="legend-dot" style="background:#EF9F27"></div>gap</div>
   <div class="legend-item"><div class="legend-dot" style="background:#1D9E75"></div>open question</div>
   <div class="legend-item"><div class="legend-dot" style="background:#D85A30"></div>tension</div>
-  <div class="legend-item"><div class="legend-diamond"></div><span style="font-size:12px;color:#666;margin-left:4px;">original design</span></div>
+  <div class="legend-item"><div class="legend-diamond"></div><span style="font-size:12px;color:#666;margin-left:4px;">origin</span></div>
   <div class="legend-item"><span class="legend-pill" style="background:#B5D4F4;color:#0C447C;">member-facing</span></div>
   <div class="legend-item"><span class="legend-pill" style="background:#FAC775;color:#412402;">staff-facing</span></div>
 </div>
