@@ -23,6 +23,7 @@ h1 { font-size: 16px; font-weight: 500; color: #444; margin-bottom: 0.5rem; }
 .entry-dot-hollow { position: absolute; left: -21px; top: 14px; width: 10px; height: 10px; border-radius: 50%; background: #fff; border: 2px solid #1D9E75; }
 .entry-square { position: absolute; left: -21px; top: 14px; width: 10px; height: 10px; background: #B4B2A9; }
 .entry-diamond { position: absolute; left: -22px; top: 13px; width: 10px; height: 10px; background: #7F77DD; transform: rotate(45deg); }
+.entry-triangle { position: absolute; left: -22px; top: 13px; width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent; border-bottom: 10px solid #1D9E75; }
 .entry-card { border: 0.5px solid #e5e5e5; border-radius: 8px; background: #fff; overflow: hidden; cursor: pointer; transition: border-color 0.15s; }
 .entry-card.blueprint { border: 0.5px dashed #7F77DD; background: #EEEDFE; }
 .entry-card.whatnext { border: 0.5px dashed #ddd; background: #f9f9f9; cursor: default; }
@@ -85,6 +86,7 @@ h1 { font-size: 16px; font-weight: 500; color: #444; margin-bottom: 0.5rem; }
   <div class="legend-item"><div class="legend-dot" style="background:#1D9E75"></div>open question</div>
   <div class="legend-item"><div class="legend-dot" style="background:#D85A30"></div>tension</div>
   <div class="legend-item"><div class="legend-diamond"></div><span style="font-size:12px;color:#666;margin-left:4px;">origin</span></div>
+  <div class="legend-item"><div style="width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:10px solid #1D9E75;flex-shrink:0;"></div><span style="font-size:12px;color:#666;margin-left:4px;">person joins</span></div>
   <div class="legend-item"><div class="legend-square"></div><span style="font-size:12px;color:#666;margin-left:4px;">parallel process</span></div>
   <div class="legend-item"><span class="legend-pill" style="background:#B5D4F4;color:#0C447C;">member-facing</span></div>
   <div class="legend-item"><span class="legend-pill" style="background:#F4C0D1;color:#4B1528;">staff-facing</span></div>
@@ -97,7 +99,7 @@ const entries = [
   {
     date: "November 2024",
     title: "Dara joins Toniic as CEO.",
-    type: "event", member: false, staff: false,
+    type: "person", member: false, staff: false,
     body: "Dara joins Toniic as CEO, succeeding Adam.",
     annotations: []
   },
@@ -211,6 +213,15 @@ const entries = [
     ]
   },
   {
+    date: "Mid-January 2026",
+    title: "2026 Workplan developed across teams.",
+    type: "parallel", member: false, staff: false,
+    body: "A 2026 organizational workplan is developed, described as 'an at-a-glance guide for how we are focusing our energy this year.' It covers priorities across Programs, Engagement, Finance & Operations, and Leadership.\n\nThe overarching focus: shifting from activity to alignment, building the conditions for collective action. Key priorities include designing meaningful member experiences, strengthening regional presence, and ensuring financial sustainability.\n\nThe vision work appears under Leadership priorities, framed as: 'Work with IWF to engage members, team, and partners in designing a new set of activities for Toniic's emerging vision, and implement as we go (rolling implementation).'\n\nNotably, the workplan also includes a guardrails section — explicitly naming what Toniic is not doing in 2026: chasing disconnected initiatives, working in functional silos, or optimizing for volume over quality.",
+    annotations: [
+      { type: "note", label: "Note", text: "This is a parallel operational document — not part of the vision project per se, but the context in which the vision work is actually happening. The 'rolling implementation' framing is worth noting: it's a more modest description of the vision work than the vision document itself." }
+    ]
+  },
+  {
     date: "January 19, 2026",
     title: "'Emerging vision' named explicitly in a Pulse for the first time.",
     type: "event", member: true, staff: false,
@@ -234,18 +245,9 @@ const entries = [
     ]
   },
   {
-    date: "Mid-January 2026",
-    title: "2026 Workplan developed across teams.",
-    type: "parallel", member: false, staff: false,
-    body: "A 2026 organizational workplan is developed, described as 'an at-a-glance guide for how we are focusing our energy this year.' It covers priorities across Programs, Engagement, Finance & Operations, and Leadership.\n\nThe overarching focus: shifting from activity to alignment, building the conditions for collective action. Key priorities include designing meaningful member experiences, strengthening regional presence, and ensuring financial sustainability.\n\nThe vision work appears under Leadership priorities, framed as: 'Work with IWF to engage members, team, and partners in designing a new set of activities for Toniic's emerging vision, and implement as we go (rolling implementation).'\n\nNotably, the workplan also includes a guardrails section — explicitly naming what Toniic is not doing in 2026: chasing disconnected initiatives, working in functional silos, or optimizing for volume over quality.",
-    annotations: [
-      { type: "note", label: "Note", text: "This is a parallel operational document — not part of the vision project per se, but the context in which the vision work is actually happening. The 'rolling implementation' framing is worth noting: it's a more modest description of the vision work than the vision document itself." }
-    ]
-  },
-  {
     date: "February 9, 2026",
     title: "Daniela joins as Director of Strategic Communications.",
-    type: "event", member: false, staff: false,
+    type: "person", member: false, staff: false,
     body: "Daniela joins Toniic.",
     annotations: []
   },
@@ -360,6 +362,7 @@ entries.forEach((entry, i) => {
     isWhatnext ? `<div class="entry-dot" style="background:#ccc;"></div>` :
     isParallel ? `<div class="entry-square"></div>` :
     entry.type === "unknown" ? `<div class="entry-dot-hollow"></div>` :
+    entry.type === "person" ? `<div class="entry-triangle"></div>` :
     isSplit ? splitSvg :
     `<div class="entry-dot" style="background:${dotColor};"></div>`;
 
