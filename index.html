@@ -27,7 +27,7 @@ h1 { font-size: 16px; font-weight: 500; color: #444; margin-bottom: 0.5rem; }
 .entry-card { border: 0.5px solid #e5e5e5; border-radius: 8px; background: #fff; overflow: hidden; cursor: pointer; transition: border-color 0.15s; }
 .entry-card.blueprint { border: 0.5px dashed #7F77DD; background: #EEEDFE; }
 .entry-card.whatnext { border: 0.5px dashed #ddd; background: #f9f9f9; cursor: default; }
-.entry-card.unknown { border: 0.5px dashed #ddd; background: #f9f9f9; }
+.entry-card.unknown { border: 0.5px dashed #E8A020; background: #FFFBF0; }
 .entry-card.parallel { border: 0.5px dashed #B4B2A9; background: #F1EFE8; }
 .entry-card:hover { border-color: #ccc; }
 .entry-card.blueprint:hover { border-color: #534AB7; }
@@ -62,6 +62,8 @@ h1 { font-size: 16px; font-weight: 500; color: #444; margin-bottom: 0.5rem; }
 .gap-box.note { background: #EEEDFE; color: #3C3489; border-left: 3px solid #7F77DD; }
 .gap-box.tension { background: #FAECE7; color: #4A1B0C; border-left: 3px solid #D85A30; }
 .gap-label { font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 3px; }
+.gap-box.striking { background: #FEF3E2; color: #7A3B00; border-left: 3px solid #E07000; }
+.entry-dot-decision { position: absolute; left: -21px; top: 12px; width: 14px; height: 14px; border-radius: 50%; background: #2C3E6B; display: flex; align-items: center; justify-content: center; font-size: 9px; font-weight: 700; color: #fff; line-height: 1; }
 .chevron { margin-left: auto; font-size: 10px; color: #aaa; transition: transform 0.15s; flex-shrink: 0; }
 .entry-card.open .chevron { transform: rotate(180deg); }
 @media (max-width: 500px) {
@@ -85,6 +87,7 @@ h1 { font-size: 16px; font-weight: 500; color: #444; margin-bottom: 0.5rem; }
   <div class="legend-item"><div class="legend-dot" style="background:#EF9F27"></div>gap</div>
   <div class="legend-item"><div class="legend-dot" style="background:#1D9E75"></div>open question</div>
   <div class="legend-item"><div class="legend-dot" style="background:#D85A30"></div>tension</div>
+  <div class="legend-item"><div style="width:14px;height:14px;border-radius:50%;background:#2C3E6B;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><span style="font-size:9px;font-weight:700;color:#fff;line-height:1;">D</span></div><span style="font-size:12px;color:#666;margin-left:4px;">decision</span></div>
   <div class="legend-item"><div class="legend-diamond"></div><span style="font-size:12px;color:#666;margin-left:4px;">origin</span></div>
   <div class="legend-item"><div style="width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:10px solid #1D9E75;flex-shrink:0;"></div><span style="font-size:12px;color:#666;margin-left:4px;">person joins</span></div>
   <div class="legend-item"><div class="legend-square"></div><span style="font-size:12px;color:#666;margin-left:4px;">parallel process</span></div>
@@ -133,39 +136,60 @@ const entries = [
     date: "April–Summer 2025",
     title: "Design research launches. Member interviews and research synthesis produced.",
     type: "event", member: false, staff: false,
-    body: "IWF launches its design research process, inviting past, present, and prospective members to participate in interviews. 15 interviews conducted using IWF's design research tools. A research synthesis is produced: 10 member segments, 11 insights, and 4 future scenarios presented as open provocations — starting points for further inquiry, not recommendations.",
+    body: "IWF conducts 15 in-depth conversations with past, present, and prospective members using projective and conversational tools — not surveys. The synthesis produces 10 member segments, 11 insights, and 4 future scenarios.\n\nThe segments cluster members by motivation and behavior, not demographics. The scenarios are framed explicitly as provocations — starting points, not conclusions. Three themes cut across nearly all conversations: a desire for meaningful roles, co-creation, and boundary-spanning (members chafe against insularity and want Toniic to engage a wider world).\n\nThe document ends by naming co-design and prototyping as the essential next phases before any direction is validated.",
     annotations: [
-      { type: "note", label: "Note", text: "At this point, co-design and prototyping with members are explicitly planned and described as ahead." },
-      { type: "note", label: "Note", text: "The four scenarios are provocations designed to open inquiry — not conclusions to be selected by leadership." }
+      { type: "striking", label: "Striking finding", text: "Belonging scores: of 15 participants, zero gave Toniic a 'high' belonging score. Six said 'not at all,' two said 'low,' seven said 'medium.' This is perhaps the most actionable single data point in the research — and it is largely absent from the vision document that followed." },
+      { type: "note", label: "Note", text: "The four scenarios — Polycapital, Collective Action, MasterClass, Polarization — are presented as neither exhaustive nor mutually exclusive. They are starting points for co-design, not options to be selected." },
+      { type: "question", label: "Open question", text: "The research was designed as Phase 1 of a three-phase process. Phases 2 and 3 — co-design and prototyping with members — were the participatory heart of the methodology. How did the process move from here to a vision document?" }
     ]
   },
   {
     date: "Summer–Fall 2025",
     title: "What happened between the research and the board retreat?",
     type: "unknown", member: false, staff: false,
-    body: "The original design called for concept testing and strategic framing with members in this period. What actually took place isn't something I have visibility into.",
+    body: "The original process design called for interactive workshops, prototypes tested with members, and a playback session in this period — Phases 2 and 3 of a three-phase design process. What actually took place isn't something I have visibility into.",
     annotations: [
-      { type: "question", label: "Open question", text: "The original design called for interactive workshops, prototypes tested with members, and a playback session before the board retreat. I'd love to understand what this period looked like in practice." }
+      { type: "question", label: "Open question", text: "The participatory phases were designed to happen here — members, staff, and partners testing and refining ideas together before the board retreat. I'd love to understand what this period looked like in practice and what inputs the board actually received." }
     ]
   },
   {
     date: "October 22–24, 2025",
-    title: "Board Retreat. Strategic options presented.",
+    title: "Board Retreat. Organizational and strategic discussions.",
     type: "event", member: false, staff: false,
-    body: "Board Retreat. Strategic options presented and discussed.",
+    body: "Board retreat with broader organizational scope — not exclusively about the vision direction. Strategic options related to the vision work were among the topics.",
     annotations: [
-      { type: "question", label: "Open question", text: "What exactly was presented at the retreat, and what form did the alignment take? I'd love to understand this better." },
-      { type: "gap", label: "Gap", text: "The retreat was designed to receive options already refined through member co-design. What was actually presented and how discussions unfolded isn't something I have visibility into." }
+      { type: "gap", label: "Gap", text: "What was presented, what decisions were made across the full agenda, and what form the alignment took isn't something I have full visibility into from here." },
+      { type: "question", label: "Open question", text: "What did the board actually receive at this retreat — in terms of the vision work specifically, and organizational priorities more broadly?" }
+    ]
+  },
+  {
+    date: "Oct–Nov 2025",
+    title: "What happened between the board retreat and the vision document?",
+    type: "unknown", member: false, staff: false,
+    body: "The research was designed to open a process — the board retreat was supposed to receive options already tested with members. What happened in the gap between the retreat and the emergence of a substantially formed vision document isn't documented.",
+    annotations: [
+      { type: "question", label: "Open question", text: "How did the research findings become a direction? The four scenarios were presented as equally valid provocations — how was one foregrounded? Who was involved in that synthesis, and over what period?" },
+      { type: "gap", label: "Gap", text: "A participatory process was designed to generate shared ownership of whatever direction emerged. It's worth understanding how much of that process happened, and what the implications are for how the vision is received by members who weren't part of shaping it." }
     ]
   },
   {
     date: "Oct–Dec 2025",
-    title: "Vision takes shape. Selective sharing begins.",
-    type: "gap", member: false, staff: false,
-    body: "In the period following the board retreat, the 'From Membership to Movement' vision comes together.",
+    title: "Vision takes shape.",
+    type: "tension", member: false, staff: false,
+    body: "In the period following the board retreat, the 'From Membership to Movement' vision comes together. The vision document was drafted by Dara.",
     annotations: [
-      { type: "gap", label: "Gap", text: "How the vision was developed in this period — who shaped it, what role the board played, how it was drafted — isn't documented." },
-      { type: "question", label: "Open question", text: "What was the journey from the research and the board retreat to the vision document? The connection between what IWF surfaced and where the vision landed — the logic and methodology of that bridge — is the piece I can't see from the outside." }
+      { type: "gap", label: "Gap", text: "How the vision was developed in this period — who else was involved, what role the board played — isn't documented." },
+      { type: "tension", label: "Process tension", text: "The vision rests on a year of genuine listening and community inquiry. That listening was real. But the process by which findings became a direction — how research became vision — isn't visible. Members participated in Phase 1 of a three-phase process; the co-design and prototyping phases where that input would have shaped direction didn't happen as designed. The listening was real. The co-creation was incomplete." },
+      { type: "question", label: "Open question", text: "What was the journey from the research and the board retreat to the vision document? The connection between what was surfaced and where the vision landed — the logic and methodology of that bridge — is the piece I can't see from the outside." }
+    ]
+  },
+  {
+    date: "Oct–Dec 2025",
+    title: "Selective sharing begins.",
+    type: "event", member: false, staff: false,
+    body: "The vision draft begins to circulate selectively — with board members, close allies, and early stakeholders — before any broader member-facing communication.",
+    annotations: [
+      { type: "question", label: "Open question", text: "Who was in this early circle, and how was feedback from this period incorporated? This is the period before the formal stakeholder feedback process began." }
     ]
   },
   {
@@ -174,9 +198,10 @@ const entries = [
     type: "event", member: true, staff: false,
     body: "The vision draft is shared with a group of stakeholders selected as likely early champions — board, staff, current members, former members, and partners. Feedback is gathered over several months and synthesized into two briefings.\n\nOverall signal: a strong majority responded enthusiastically, describing the direction as timely and necessary. A significant minority was supportive but raised concerns. A small number were skeptical. Even critical voices largely affirmed the underlying direction.\n\nWhat resonated: the shift from membership to movement, polycapital, systems lens, and collective action.\n\nWhat people asked for: clarity on what will actually change and in what sequence; reassurance about what stays the same; more visible co-creation with members; and careful pacing.",
     annotations: [
-      { type: "note", label: "Note", text: "Respondents were pre-selected as likely champions — not a representative sample. The signal is meaningful but should be read in that context." },
-      { type: "gap", label: "Gap", text: "The vision has continued to evolve since this feedback was gathered. It's not clear how formally the feedback shaped subsequent revisions, or how changes are being tracked." },
-      { type: "question", label: "Open question", text: "How did this feedback inform the vision as it developed? A second round of feedback was gathered after the AGG — I'd love to understand what happened with those findings." }
+      { type: "note", label: "Note", text: "Respondents were pre-selected as likely champions — not a representative sample. Disengaged and departed members, who figured prominently in the design research, were not part of this process." },
+      { type: "tension", label: "Tension", text: "The research surfaced a clear appetite for less insularity — members wanting Toniic to engage a wider world. This feedback process was itself fairly insular: a curated group asked to respond to a formed vision. That's a different thing from testing a direction with people who have already walked away." },
+      { type: "gap", label: "Gap", text: "The vision has continued to evolve since this feedback was gathered. How formally the feedback shaped subsequent revisions isn't clear." },
+      { type: "question", label: "Open question", text: "A second round of feedback was gathered after the AGG — I'd love to understand what happened with those findings." }
     ]
   },
   {
@@ -238,10 +263,10 @@ const entries = [
   {
     date: "Early February 2026",
     title: "Multi-stakeholder framing scaled back.",
-    type: "event", member: false, staff: false,
+    type: "decision", member: false, staff: false,
     body: "A decision is made to pull back the multi-stakeholder focus from the vision — specifically the framing around engaging policymakers, grassroots actors, and non-wealth-holders as part of Toniic's core work. This had been one of the named shifts in earlier versions.",
     annotations: [
-      { type: "note", label: "Note", text: "The reasoning, as I understand it: members signaled discomfort with the framing, and the language was adjusted in response. Worth sitting with how this decision was made, and whether it's the kind of adjustment the vision itself would endorse." }
+      { type: "note", label: "Note", text: "The research actually holds both sides of this tension simultaneously: members chafe against Toniic's insularity and want to engage a wider world — and they also value the safety of wealth-holder-only spaces, where honest conversation about money is possible without judgment or performance. These two things are genuinely in tension. The decision to scale back multi-stakeholder framing responds to the safety concern — but it does so by choosing one side of the tension rather than sitting with both." }
     ]
   },
   {
@@ -262,42 +287,51 @@ const entries = [
   },
   {
     date: "February 19–22, 2026",
-    title: "Annual Global Gathering, Mérida. Vision presented. IWF runs sessions.",
+    title: "AGG, Mérida. Vision summary presented. IWF runs sessions.",
     type: "event", member: true, staff: false,
-    body: "Approximately 50 members attend. Dara opens the conference with a presentation of the emerging vision — close to the current version — though members were not specifically primed to expect an organizational strategy conversation alongside the usual conference programming.\n\nIWF runs sessions: games and exercises to surface member values, drawing on research materials. Three co-design and prototyping sessions introduced the concept of prototyping. These were optional rather than required — attendance was uneven.\n\nToward the end of the conference, a session explaining IWF's design research methodology was added — not originally planned. Member response was positive.",
+    body: "Approximately 50 members attend. Dara presents a summary of the emerging vision — close to the current version — though members weren't specifically primed to expect an organizational strategy conversation alongside the usual conference programming.\n\nIWF runs co-design sessions using games and exercises to surface member values. Three sessions introduced the concept of prototyping; attendance was uneven as they were optional. Toward the end, a session explaining IWF's design research methodology and findings was added — not originally planned. Member response to this was positive.",
     annotations: [
       { type: "note", label: "Member reaction", text: "Some members experienced the collective action framing as politically charged or as something that might constrain their individual choices — a reading the vision hadn't anticipated. For some, it landed as a bigger shift than intended." },
-      { type: "note", label: "Note", text: "Members responded well to the methodology explanation at the end — suggesting that understanding the process behind the vision mattered as much as the vision itself." },
+      { type: "note", label: "Note", text: "Members responded well to the methodology explanation — suggesting that understanding the process behind the vision mattered as much as the vision itself." },
       { type: "gap", label: "Gap", text: "No IWF report was produced from the AGG. What members said, what was learned, and how it informed anything downstream isn't documented." }
     ]
   },
   {
     date: "February–March 2026",
-    title: "Two documents emerge reflecting different assumptions. Toniic Classic/Labs framing begins.",
+    title: "Two documents emerge reflecting different assumptions about next steps.",
     type: "tension", member: false, staff: false,
-    body: "In roughly the same period, two significant pieces of work are produced independently.\n\nSeparately, on March 17 Dara introduces a framing to the management team of 'Toniic Classic' and 'Toniic Labs' — a distinction between business as usual and the experimental vision work. This framing helps soften the tension between the two documents, though the question of how they relate remains open.",
+    body: "In roughly the same period, two significant pieces of work are produced independently — and they don't agree on where things stand.",
     annotations: [
       { type: "tension", label: "Document 1", text: "Dario produces an early draft implementation proposal outlining 7 pilots and oriented toward building — here is what we are building, here is who owns what. It assumes the vision is ready to be operationalized." },
       { type: "tension", label: "Document 2", text: "IWF produces a reflective document raising questions about whether the foundations are in place. Missing pieces identified: prototyping plan, communications strategy, decision-making structures, staff engagement strategy, shared learning frame." },
-      { type: "note", label: "Note", text: "The Classic/Labs framing offers a way to hold both realities — continuing current work while experimenting with new approaches — without one canceling the other out." },
-      { type: "gap", label: "Gap", text: "It would be helpful to understand which assumptions are currently guiding the work, and how the Classic/Labs distinction will be communicated internally and externally." }
+      { type: "gap", label: "Gap", text: "It would be helpful to understand which set of assumptions is currently guiding the work." }
+    ]
+  },
+  {
+    date: "March 17, 2026",
+    title: "Classic/Labs framing introduced to management team.",
+    type: "decision_suspected", member: false, staff: true,
+    body: "Dara introduces a framing of 'Toniic Classic' and 'Toniic Labs' to the management team — a distinction between continuing business as usual and the experimental vision work. The framing helps hold both realities without one canceling the other out.",
+    annotations: [
+      { type: "note", label: "Note", text: "Whether this represents a formal decision or an emerging framing isn't yet clear. It was introduced verbally in a management meeting — not documented in writing as far as I know." },
+      { type: "gap", label: "Gap", text: "How the Classic/Labs distinction will be communicated internally and externally, and what it means operationally, hasn't been defined." }
     ]
   },
   {
     date: "Early March 2026",
-    title: "April 1 session scope discussed. Prototyping approach considered then set aside.",
-    type: "event", member: false, staff: false,
+    title: "Toniic Community Conversation scope decided. Prototyping approach set aside.",
+    type: "decision", member: false, staff: false,
     body: "In early March, a more participatory session is considered for April 1 — one focused on prototyping, consistent with IWF's original process design and the co-design phases that hadn't happened at scale.\n\nAround March 9, the decision shifts: given that most members haven't yet had a basic introduction to the vision or the design research methodology, the session becomes primarily informational — presenting the vision and walking through the design research approach. Essentially a redo of the two informational moments from the AGG, now available to members who weren't in Mérida.",
     annotations: [
-      { type: "note", label: "Note", text: "The April 1 session is titled 'Toniic Community Conversation: Emerging Vision.'" },
-      { type: "question", label: "Open question", text: "Is the plan to move toward more participatory sessions after April 1? What does the sequence look like from here?" }
+      { type: "note", label: "Note", text: "The session is titled 'Toniic Community Conversation: Emerging Vision' (April 1, Americas/EMEA; April 2, APAC)." },
+      { type: "question", label: "Open question", text: "Is the plan to move toward more participatory sessions after the Toniic Community Conversation? What does the sequence look like from here?" }
     ]
   },
   {
     date: "March 16, 2026",
-    title: "Pulse. Most explicit all-member vision communication to date.",
+    title: "All-member communication. Dara writes vision intro directly. Toniic Community Conversation announced.",
     type: "event", member: true, staff: false,
-    body: "Dara writes the Pulse intro directly for the first time, naming the emerging vision conversation explicitly. This is the first time the vision has been communicated this directly to all members — even if the Pulse's readership is not universal, it's the broadest single send yet.\n\nThe opening paragraph is itself indicative of the vision's direction — not just announcing an event but modeling the tone and framing of the next chapter. April 1 session announced — Americas/EMEA: April 1; APAC: April 2.",
+    body: "Dara writes the Pulse intro directly for the first time, naming the emerging vision conversation explicitly. The broadest single send yet — the first time the vision has been communicated this directly to all members.\n\nThe opening paragraph is itself indicative of the vision's direction — not just announcing an event but modeling the tone and framing of the next chapter. Toniic Community Conversation: Emerging Vision announced — Americas/EMEA: April 1; APAC: April 2.",
     annotations: []
   },
   {
@@ -311,7 +345,7 @@ const entries = [
   },
   {
     date: "April 1–2, 2026 (upcoming)",
-    title: "Virtual member session. Vision and design research presented.",
+    title: "Toniic Community Conversation: Emerging Vision. April 1–2.",
     type: "event", member: true, staff: false,
     body: "90-minute virtual session. Dara and IWF present. Design research shared with members for the first time. Vision presented. Session focused on visibility and member awareness — IWF will use interactive exercises to create space for engagement. APAC version on April 2.",
     annotations: [
@@ -323,7 +357,7 @@ const entries = [
     date: "April 2, 2026 (upcoming)",
     title: "Board meeting.",
     type: "event", member: false, staff: false,
-    body: "Board meeting takes place. April 1 session will have occurred just prior.",
+    body: "Board meeting takes place. Toniic Community Conversation: Emerging Vision will have occurred just prior.",
     annotations: []
   },
   {
@@ -342,13 +376,14 @@ entries.forEach((entry, i) => {
   const isBlueprint = entry.type === "blueprint";
   const isWhatnext = entry.type === "whatnext";
   const isParallel = entry.type === "parallel";
+  const isDecision = entry.type === "decision" || entry.type === "decision_suspected";
   const hasBody = (entry.body && entry.body.trim()) || (entry.annotations && entry.annotations.length > 0) || (entry.phases && entry.phases.length > 0);
 
   const hasGap = entry.annotations && entry.annotations.some(a => a.type === "gap");
   const hasQuestion = entry.annotations && entry.annotations.some(a => a.type === "question");
-  const isSplit = entry.type !== "unknown" && !isParallel && hasGap && hasQuestion;
+  const isSplit = entry.type !== "unknown" && entry.type !== "tension" && !isParallel && !isDecision && hasGap && hasQuestion;
 
-  const dotColor = isBlueprint || isWhatnext || isParallel ? null :
+  const dotColor = isBlueprint || isWhatnext || isParallel || isDecision ? null :
     entry.type === "unknown" ? null :
     isSplit ? null :
     entry.type === "tension" ? "#D85A30" :
@@ -363,6 +398,7 @@ entries.forEach((entry, i) => {
     isParallel ? `<div class="entry-square"></div>` :
     entry.type === "unknown" ? `<div class="entry-dot-hollow"></div>` :
     entry.type === "person" ? `<div class="entry-triangle"></div>` :
+    isDecision ? `<div class="entry-dot-decision">D</div>` :
     isSplit ? splitSvg :
     `<div class="entry-dot" style="background:${dotColor};"></div>`;
 
@@ -378,10 +414,10 @@ entries.forEach((entry, i) => {
     ${dotHtml}
     <div class="entry-card${isBlueprint ? ' blueprint' : ''}${isWhatnext ? ' whatnext' : ''}${isParallel ? ' parallel' : ''}${entry.type === 'unknown' ? ' unknown' : ''}" ${hasBody ? `data-idx="${i}"` : ''}>
       <div class="entry-header">
-        <span class="entry-date" style="${entry.type === 'unknown' ? 'color:#bbb;' : ''}">${entry.date}</span>
+        <span class="entry-date" style="${entry.type === 'unknown' ? 'color:#C47A10;' : ''}">${entry.date}</span>
         <div class="entry-header-right">
           <div class="entry-header-top">
-            <span class="entry-title" style="${entry.type === 'unknown' ? 'color:#999;font-style:italic;' : ''}">${entry.title}</span>
+            <span class="entry-title" style="${entry.type === 'unknown' ? 'color:#C47A10;font-style:italic;' : ''}">${entry.title}</span>
             ${hasBody ? '<span class="chevron">&#9660;</span>' : ''}
           </div>
           ${pillsHtml}
