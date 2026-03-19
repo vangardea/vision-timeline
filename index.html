@@ -66,6 +66,7 @@ h1 { font-size: 16px; font-weight: 500; color: #444; margin-bottom: 0.5rem; }
 .entry-dot-decision { position: absolute; left: -21px; top: 12px; width: 14px; height: 14px; border-radius: 50%; background: #2C3E6B; display: flex; align-items: center; justify-content: center; font-size: 9px; font-weight: 700; color: #fff; line-height: 1; }
 .chevron { margin-left: auto; font-size: 10px; color: #aaa; transition: transform 0.15s; flex-shrink: 0; }
 .entry-card.open .chevron { transform: rotate(180deg); }
+.year-marker { font-size: 11px; font-weight: 600; color: #bbb; text-transform: uppercase; letter-spacing: 0.08em; margin: 18px 0 8px -32px; padding-left: 8px; }
 @media (max-width: 500px) {
   .entry-header { flex-wrap: wrap; }
   .entry-date { width: 100%; min-width: unset; white-space: normal; }
@@ -79,7 +80,7 @@ h1 { font-size: 16px; font-weight: 500; color: #444; margin-bottom: 0.5rem; }
 <p class="subtitle">Timeline — last updated March 2026</p>
 
 <div class="framing-note">
-  I've been trying to understand the full arc of this work — including what happened before I joined. This is my attempt to map it. I know there are gaps and I've tried to mark them honestly. I'd love help filling in what I'm missing.
+  This is my attempt to map the full arc of this work — including the period before I joined. This version has been substantially updated with primary source context from conversations with Dara, the leadership team, and Sarah Schulman. Several open questions have been answered; others have sharpened. What remains are the tensions that don't resolve easily.
 </div>
 
 <div class="legend">
@@ -99,144 +100,143 @@ h1 { font-size: 16px; font-weight: 500; color: #444; margin-bottom: 0.5rem; }
 
 <script>
 const entries = [
+
+  // ── 2024 ──────────────────────────────────────────────────────────────────
+  { _year: "2024" },
+
+  {
+    date: "October 2024",
+    title: "Dara begins thinking through the strategic challenge with Sarah Schulman / IWF.",
+    type: "blueprint", member: false, staff: false,
+    body: "Before officially starting, Dara begins working through the strategic challenge with Dr. Sarah Schulman of InWithForward — a longtime thought partner from previous work. When Dara gets the job in October, they begin conceptualizing what a design research process might look like for Toniic. Sarah does early one-on-ones with Adam. This is not yet a formal engagement — it's Dara thinking out loud with a trusted collaborator. The IWF proposal formally arrives around February 19, 2025.",
+    annotations: [
+      { type: "note", label: "Note", text: "Dara arrives at Toniic with a strong predisposition toward a design research approach — and a specific trusted partner in mind — before formally engaging the leadership team on the question of how to approach strategy. This is context for how the process unfolded: it wasn't a fully open search." }
+    ]
+  },
   {
     date: "November 2024",
-    title: "Dara joins Toniic as CEO.",
+    title: "Dara joins as incoming CEO. Co-leadership period with Adam begins.",
     type: "person", member: false, staff: false,
-    body: "Dara joins Toniic as CEO, succeeding Adam.",
+    body: "Dara joins as incoming CEO in November — officially taking the reins in January 2025. November and December are a co-leadership period with Adam as outgoing CEO. Dara spends most of November in Cape Town doing a 3-week immersion: one-on-ones with all staff, in-person observation. Adam remains active CEO, which puts Dara in listening mode — an accelerated but constrained orientation to the organization and its dynamics.",
     annotations: []
   },
+
+  // ── 2025 ──────────────────────────────────────────────────────────────────
+  { _year: "2025" },
+
   {
-    date: "February 2025",
-    title: "Strategic planning process begins: five phases, participatory by design.",
+    date: "January–February 2025",
+    title: "Design research approach socialized with leadership. IWF proposal arrives Feb 19.",
     type: "blueprint", member: false, staff: false,
-    body: "The process was triggered by a genuine organizational need: growth had stalled since 2021, the ecosystem had changed, and a new CEO required a refreshed strategy. It also marked the conclusion of Toniic's previous three-year strategic plan. The design was exploratory and participatory — member voices were intended to shape direction throughout, not just inform it.",
+    body: "Three converging conditions prompt a strategic process: stalled or declining membership growth (the most significant driver), the conclusion of Toniic's previous three-year strategic plan, and the natural expectation that new leadership brings a refreshed direction. Dara spends January and February socializing a design research approach with the leadership team — Adam, Dario, and Sean. Christine is on parental leave from February and absent from most of this.\n\nDario had proposed a more traditional approach: market surveys, consultant-led customer research, understanding what members want and designing services around it. Sean was open but not operating at the strategy level. Adam had reservations about pace. Dara introduces the language of ethnography, small data, and design research — unfamiliar to the team. Dario and Sean initially suggest getting competing proposals; they then come back and say: no, let's go with what you're proposing.\n\nThe IWF proposal arrives around February 19, 2025. It covers three phases — design research, co-design, and prototyping — with associated costs. This becomes the working document throughout the process, more so than Toniic's own planning documents.",
     phases: [
-      { label: "Phase 1: Preparation (Feb–Mar 2025)", skipped: false },
-      { label: "Phase 2: Discovery — member interviews (Apr–Jun 2025)", skipped: false },
-      { label: "Phase 3: Sensemaking & synthesis (Jun–Jul 2025)", skipped: false },
-      { label: "Phase 4: Ideation & concept testing with members (Jul–Sep 2025)", skipped: true },
-      { label: "Phase 5: Strategic framing & options (Sep–Oct 2025)", skipped: true },
-      { label: "Board retreat: receive refined options (Oct 2025)", skipped: false }
+      { label: "IWF Phase 1: Design research / discovery", skipped: false },
+      { label: "IWF Phase 2: Co-design with members (planned summer 2025)", skipped: true },
+      { label: "IWF Phase 3: Prototyping (not funded / scoped for this timeline)", skipped: true }
     ],
     annotations: [
-      { type: "note", label: "Note", text: "Phases 4 and 5 — where members, staff, and board would test and refine strategic prototypes together — were the participatory heart of the design. The board retreat was intended to receive options already shaped by that process." }
+      { type: "note", label: "Note", text: "A five-phase strategic planning document was also co-authored by Dara and Dario around this time — an attempt to layer traditional planning scaffolding onto the design process. It proved 'not particularly useful' in practice. The IWF proposal was the working framework. This matters because the outputs organizations typically generate as a byproduct of strategic planning (operational roadmaps, goals, revenue targets, role clarity) were never going to come from a design process alone — and it's not clear this gap was explicitly recognized at the time." },
+      { type: "tension", label: "Process tension", text: "Co-design and prototyping (Phases 2 and 3) were presented to the leadership team as essential parts of the process — in writing and verbally, more than once. The participatory phases were the heart of the methodology; their eventual absence is the central structural gap in the project." }
     ]
   },
   {
-    date: "Early 2025",
-    title: "IWF engaged as design research partner.",
+    date: "Spring–Summer 2025",
+    title: "Design research launches. Staff socialization, member interviews, synthesis.",
     type: "event", member: false, staff: false,
-    body: "InWithForward engaged to run a design research process alongside the strategic planning work.",
-    annotations: [
-      { type: "question", label: "Open question", text: "The exact timing and terms of IWF's engagement aren't documented. When were they brought in, and how was their scope defined relative to the strategic planning process? I'm coming from a more traditional strategic planning background, so before drawing any conclusions I want to understand: what drew us to a participatory design approach here — and how did we envision the relationship between the two from the beginning?" }
-    ]
-  },
-  {
-    date: "April–Summer 2025",
-    title: "Design research launches. Member interviews and research synthesis produced.",
-    type: "event", member: false, staff: false,
-    body: "IWF conducts 15 in-depth conversations with past, present, and prospective members using projective and conversational tools — not surveys. The synthesis produces 10 member segments, 11 insights, and 4 future scenarios.\n\nThe segments cluster members by motivation and behavior, not demographics. The scenarios are framed explicitly as provocations — starting points, not conclusions. Three themes cut across nearly all conversations: a desire for meaningful roles, co-creation, and boundary-spanning (members chafe against insularity and want Toniic to engage a wider world).\n\nThe document ends by naming co-design and prototyping as the essential next phases before any direction is validated.",
+    body: "IWF conducts 15 in-depth conversations with past, present, and prospective members using projective and conversational tools — not surveys. The synthesis produces 10 member segments, 11 insights, and 4 future scenarios.\n\nThe segments cluster members by motivation and behavior, not demographics. The scenarios — Polycapital, Collective Action, MasterClass, Polarization — are framed explicitly as provocations: starting points, not conclusions. Three themes cut across nearly all conversations: a desire for meaningful roles, co-creation, and boundary-spanning (members chafe against insularity and want Toniic to engage a wider world).\n\nStaff are involved in the preparation: relationship managers help develop the long and short list of interviewees; Sarah runs two 90-minute sessions with the engagement team. The full staff team is introduced to the design process at minimum once in written and verbal form.\n\nThe synthesis is not delivered until late October — approximately one week before the board retreat. Phase 2 (co-design) was originally planned for summer 2025.",
     annotations: [
       { type: "striking", label: "Striking finding", text: "Belonging scores: of 15 participants, zero gave Toniic a 'high' belonging score. Six said 'not at all,' two said 'low,' seven said 'medium.' This is perhaps the most actionable single data point in the research — and it is largely absent from the vision document that followed." },
-      { type: "note", label: "Note", text: "The four scenarios — Polycapital, Collective Action, MasterClass, Polarization — are presented as neither exhaustive nor mutually exclusive. They are starting points for co-design, not options to be selected." },
-      { type: "question", label: "Open question", text: "The research was designed as Phase 1 of a three-phase process. Phases 2 and 3 — co-design and prototyping with members — were the participatory heart of the methodology. How did the process move from here to a vision document?" }
+      { type: "note", label: "Note", text: "The four scenarios are presented as neither exhaustive nor mutually exclusive. They are starting points for co-design, not options to be selected. The research was explicitly framed as Phase 1 of 3." },
+      { type: "gap", label: "Gap", text: "The synthesis arriving late October — one week before the board retreat — compressed the window between receiving findings and acting on them to near zero. There was no time for co-design phases between research and board decision." }
     ]
   },
   {
-    date: "Summer–Fall 2025",
-    title: "What happened between the research and the board retreat?",
-    type: "unknown", member: false, staff: false,
-    body: "The original process design called for interactive workshops, prototypes tested with members, and a playback session in this period — Phases 2 and 3 of a three-phase design process. What actually took place isn't something I have visibility into.",
+    date: "June–September 2025",
+    title: "Organizational restructuring. HR crisis period.",
+    type: "parallel", member: false, staff: true,
+    body: "A significant organizational restructuring takes place in mid-to-late June 2025 — approximately 3–4 weeks after a new hire joins in mid-May. The restructuring had been planned for roughly 8 months (since before Dara started), driven by financial pressure, unresolved HR issues, and a belief that the existing team wasn't configured for the transformation work ahead. Christine is on parental leave throughout. Several staff take approximately a month off to process their feelings.\n\nA second HR situation escalates in July–August and is resolved in mid-September. Dara describes the period from June through October as 'HR hell' — consuming enormous leadership time and energy precisely when the design research process needed attention.",
     annotations: [
-      { type: "question", label: "Open question", text: "The participatory phases were designed to happen here — members, staff, and partners testing and refining ideas together before the board retreat. I'd love to understand what this period looked like in practice and what inputs the board actually received." }
+      { type: "tension", label: "Context", text: "Phase 2 of the IWF process — co-design with members — was originally planned for summer 2025. The restructuring and its aftermath occupy most of this period. The relationship between these two facts is not formally documented, but the timeline makes it visible." },
+      { type: "note", label: "Note", text: "Dara is clear the restructuring was not a hasty decision — planned over 8 months, with board involvement, driven by multiple converging objectives including financial pressure. She also acknowledges cascading consequences that were difficult to fully anticipate. The board retreat in October becomes the first moment of genuine relief after months of difficulty." }
+    ]
+  },
+  {
+    date: "Late October 2025",
+    title: "Research synthesis delivered. One week before board retreat.",
+    type: "gap", member: false, staff: false,
+    body: "The full research synthesis — 10 member segments, 11 insights, 4 future scenarios — is delivered in late October, approximately one week before the board retreat. Phase 2 (co-design) was originally planned to happen before this point.",
+    annotations: [
+      { type: "gap", label: "Gap", text: "The compressed timeline means there is no window between receiving the findings and presenting them to the board. The co-design phases that were supposed to mediate between research and board decision do not happen. The board receives Phase 1 outputs and is asked to engage with them directly." }
     ]
   },
   {
     date: "October 22–24, 2025",
-    title: "Board Retreat. Organizational and strategic discussions.",
-    type: "event", member: false, staff: false,
-    body: "Board retreat with broader organizational scope — not exclusively about the vision direction. Strategic options related to the vision work were among the topics.",
+    title: "Board Retreat. Research presented. Board co-designs container. Direction endorsed.",
+    type: "decision", member: false, staff: false,
+    body: "Two-day retreat co-facilitated by Dara and Sarah Schulman. The full board participates. They are taken through the full research synthesis — member segmentation, 10 profiles, 11 insights, and 4 scenarios presented as provocations.\n\nBoard members work in two groups using blank scenario templates to 'mash up' the scenarios — selecting elements they want to keep, adding their own. The two groups produce very similar results. This becomes 'the container': a direction of travel within which future co-design will happen. The board's mashup draws primarily from the Collective Action scenario, with elements of Polycapital.\n\nA key design question is raised explicitly at the retreat: should the container be co-designed with the full membership, or should the board set it and members co-design within it? The board discusses trade-offs — broader co-design would be slower, more expensive, more participatory; board-set container enables faster movement. They choose to set the container themselves.\n\nA significant alignment moment: Dara asks 'why should Toniic exist?' as a centering question on day 2. Almost all board members align on the view that Toniic should not exist for its own sake — only if it can deliver on a larger purpose. The myth of maximizing returns while maximizing impact is named and collectively acknowledged for what Dara describes as the first time. Board endorses the direction by the end of the retreat.",
     annotations: [
-      { type: "gap", label: "Gap", text: "What was presented, what decisions were made across the full agenda, and what form the alignment took isn't something I have full visibility into from here." },
-      { type: "question", label: "Open question", text: "What did the board actually receive at this retreat — in terms of the vision work specifically, and organizational priorities more broadly?" }
+      { type: "tension", label: "Process tension", text: "The board's co-design of the container is itself a form of co-design — but with the board, not with members. Sarah later confirms this was a legitimate design move: constraints introduced by a decisive leadership body are normal in the process. But the question of whether the board was representative enough to make this call, and whether members who participated in the research expected more input, remains live." },
+      { type: "note", label: "Note", text: "Board members experienced the retreat as highly positive — both analytically and experientially. Sarah's facilitation built confidence in the process. Dara describes it as the first moment of genuine hope after months of HR difficulty." },
+      { type: "gap", label: "Gap", text: "The board was not explicitly reminded at the retreat that they were receiving Phase 1 findings only — and that Phases 2 and 3 hadn't happened. They had been told about the three-phase design at the outset, but Dara acknowledges they probably didn't remember and weren't tracking the gap between what was planned and what was delivered." }
     ]
   },
   {
-    date: "Oct–Nov 2025",
-    title: "What happened between the board retreat and the vision document?",
-    type: "unknown", member: false, staff: false,
-    body: "The research was designed to open a process — the board retreat was supposed to receive options already tested with members. What happened in the gap between the retreat and the emergence of a substantially formed vision document isn't documented.",
-    annotations: [
-      { type: "question", label: "Open question", text: "How did the research findings become a direction? The four scenarios were presented as equally valid provocations — how was one foregrounded? Who was involved in that synthesis, and over what period?" },
-      { type: "gap", label: "Gap", text: "A participatory process was designed to generate shared ownership of whatever direction emerged. It's worth understanding how much of that process happened, and what the implications are for how the vision is received by members who weren't part of shaping it." }
-    ]
-  },
-  {
-    date: "Oct–Dec 2025",
-    title: "Vision takes shape.",
+    date: "November 2025",
+    title: "Dara writes the vision document.",
     type: "tension", member: false, staff: false,
-    body: "In the period following the board retreat, the 'From Membership to Movement' vision comes together. The vision document was drafted by Dara.",
+    body: "Coming out of the board retreat, Dara begins writing what becomes the 'From Membership to Movement' vision document. She describes it as a sense-making exercise — an attempt to synthesize everything she heard: from the research, from board members at the retreat, from months of conversations with staff, members, and partners. The writing flows quickly. She uses it first as a sense-checking tool with the board — is this what you meant? — gets a positive response, then begins circulating it more broadly as a provocation.\n\nSarah is consulted and described the document as exciting when she first saw it. The vision was not produced through a documented methodology, was not co-authored with Sarah, and was not prototyped or tested with members before circulating. It is Dara's synthesis — informed by deep listening, but not co-created.\n\nIn a later conversation, Sarah confirms she does not see the vision as a departure from the design process: the board's decisiveness represented legitimate convergence, and the vision became the container within which co-design continues.",
     annotations: [
-      { type: "gap", label: "Gap", text: "How the vision was developed in this period — who else was involved, what role the board played — isn't documented." },
-      { type: "tension", label: "Process tension", text: "The vision rests on a year of genuine listening and community inquiry. That listening was real. But the process by which findings became a direction — how research became vision — isn't visible. Members participated in Phase 1 of a three-phase process; the co-design and prototyping phases where that input would have shaped direction didn't happen as designed. The listening was real. The co-creation was incomplete." },
-      { type: "question", label: "Open question", text: "What was the journey from the research and the board retreat to the vision document? The connection between what was surfaced and where the vision landed — the logic and methodology of that bridge — is the piece I can't see from the outside." }
+      { type: "tension", label: "The unresolved leap", text: "Sarah's framing holds for the container — the board's decision to pursue a Collective Action + Polycapital direction is a defensible design move. What it doesn't address is the jump from 'board selects a scenario mashup' to 'a 9-section vision document with named frameworks, philosophical positions, a theory of leadership, a theory of measurement, and literary epigraphs.' A container is not the same as a finished vision. The co-design that was supposed to happen between research and board decision — and that would have shaped the texture and content of whatever emerged — was skipped. The vision landed as if it were the output of that process. It wasn't." },
+      { type: "note", label: "Note", text: "Dara is candid that she 'probably made some leaps' and brought her own voice to the 'if I heard this, then this is the direction' logic. She was genuinely trying to capture what she heard — not impose. The distinction between 'I synthesized what I heard' and 'I interpreted what I heard and drew my own conclusions' is where the gap lives." },
+      { type: "question", label: "Open question", text: "The vision continues to be described as open and in-progress. But it reads as substantially formed — and members who engage with it often experience it that way. Sarah notes in her March 11 document that 'in design, there is never anything final — it's always iterated.' Whether that framing is enough to hold the tension is a live communications question." }
     ]
   },
   {
-    date: "Oct–Dec 2025",
-    title: "Selective sharing begins.",
-    type: "event", member: false, staff: false,
-    body: "The vision draft begins to circulate selectively — with board members, close allies, and early stakeholders — before any broader member-facing communication.",
+    date: "November–December 2025",
+    title: "Vision shared with staff. Three virtual sessions. Board decision explained.",
+    type: "tension", member: false, staff: true,
+    body: "Staff are taken through three virtual sessions replicating (in condensed form) what the board experienced at the retreat. They are shown the container the board defined, taken through the scenario templates, and told the board made this decision. The vision document is shared as a provocation.\n\nReactions are mixed. Some staff are energized. Others find the language unfamiliar — terms like 'systems change' weren't part of everyone's day-to-day vocabulary. Most ask questions about the how: what does this mean for my role, is there a viable business model, what changes and what stays the same? Generally, staff respond with relief more than resistance — they had wanted a direction after a period of uncertainty.",
     annotations: [
-      { type: "question", label: "Open question", text: "Who was in this early circle, and how was feedback from this period incorporated? This is the period before the formal stakeholder feedback process began." }
+      { type: "note", label: "Note", text: "The 'board made this decision' framing is received as legitimate. Dara notes that staff at Toniic don't tend toward the social-justice-field response of 'why should the board decide?' — they wanted direction and were glad to have it. The harder question — what does it mean operationally — is what staff are still waiting on." }
     ]
   },
   {
-    date: "Nov 2025–Jan 2026",
-    title: "Structured stakeholder feedback process.",
+    date: "November 2025–January 2026",
+    title: "Structured stakeholder feedback process. Two rounds.",
     type: "event", member: true, staff: false,
-    body: "The vision draft is shared with a group of stakeholders selected as likely early champions — board, staff, current members, former members, and partners. Feedback is gathered over several months and synthesized into two briefings.\n\nOverall signal: a strong majority responded enthusiastically, describing the direction as timely and necessary. A significant minority was supportive but raised concerns. A small number were skeptical. Even critical voices largely affirmed the underlying direction.\n\nWhat resonated: the shift from membership to movement, polycapital, systems lens, and collective action.\n\nWhat people asked for: clarity on what will actually change and in what sequence; reassurance about what stays the same; more visible co-creation with members; and careful pacing.",
+    body: "The vision draft is shared with a group of stakeholders selected as likely early champions — board, staff, current members, former members, and partners. Feedback is gathered over several months and synthesized into two briefings, the second more robust than the first with slightly more critique.\n\nOverall signal: a strong majority responded enthusiastically, describing the direction as timely and necessary. What resonated: the shift from membership to movement, polycapital framing, systems lens, and collective action. Safe convenings was the main concern raised.\n\nDara acknowledges there is no strong methodology behind this process — same document shared with a range of people, same questions asked, responses collected. It was not a designed research instrument.",
     annotations: [
       { type: "note", label: "Note", text: "Respondents were pre-selected as likely champions — not a representative sample. Disengaged and departed members, who figured prominently in the design research, were not part of this process." },
-      { type: "tension", label: "Tension", text: "The research surfaced a clear appetite for less insularity — members wanting Toniic to engage a wider world. This feedback process was itself fairly insular: a curated group asked to respond to a formed vision. That's a different thing from testing a direction with people who have already walked away." },
-      { type: "gap", label: "Gap", text: "The vision has continued to evolve since this feedback was gathered. How formally the feedback shaped subsequent revisions isn't clear." },
-      { type: "question", label: "Open question", text: "A second round of feedback was gathered after the AGG — I'd love to understand what happened with those findings." }
-    ]
-  },
-  {
-    date: "Nov–Dec 2025",
-    title: "Vision first shared with staff. Mixed reactions.",
-    type: "tension", member: false, staff: true,
-    body: "Staff are presented with the emerging vision for the first time.",
-    annotations: [
-      { type: "tension", label: "Tension", text: "Reactions were mixed. Some staff were energized by the direction. Others found some of the language unfamiliar — terms like 'systems change' weren't part of everyone's day-to-day vocabulary. Some raised questions about how this connected to current work, whether there was a viable business model, and what it meant for their roles going forward." },
-      { type: "note", label: "Note", text: "This surfaced an important question about staff orientation and change management that hasn't yet been formally addressed." }
+      { type: "tension", label: "Tension", text: "The research surfaced a clear appetite for less insularity — members wanting Toniic to engage a wider world. This feedback process was itself fairly insular: a curated group asked to respond to a formed vision. That's a different thing from testing a direction with people who have already walked away." }
     ]
   },
   {
     date: "December 1, 2025",
     title: "First signal of emerging direction in a Pulse.",
     type: "event", member: true, staff: false,
-    body: "First traceable mention in a Pulse of an 'emerging strategic direction.' References an upcoming Townhall where Dara will offer 'a glimpse of where we're headed in 2026.' Vision not named directly.",
+    body: "First traceable mention in a Pulse of an 'emerging strategic direction' — references an upcoming Townhall where Dara will offer 'a glimpse of where we're headed in 2026.' Vision not named directly.",
     annotations: []
   },
   {
     date: "December 17–18, 2025",
     title: "Toniic Townhall. First verbal presentation of the vision to members.",
     type: "event", member: true, staff: false,
-    body: "Two Townhall sessions across time zones. Approximately 15 people attend. Dara presents the 'From Membership to Movement' framing verbally for the first time. No document shared publicly.",
+    body: "Two Townhall sessions across time zones. Approximately 15 people attend. Dara presents the 'From Membership to Movement' framing verbally for the first time. No document shared publicly. The slow drip of communication is intentional — Dara is resisting making a dramatic announcement, signaling without over-committing, and waiting for strategic communications support.",
     annotations: []
   },
   {
     date: "Late December 2025",
     title: "Year-end letter. 'From Membership to Movement' named publicly for the first time.",
     type: "event", member: true, staff: false,
-    body: "Year-end letter from Dara sent to all members. Introduces 'From Membership to Movement' explicitly. Members invited to AGG in Mérida as 'one of the key places where we begin co-designing this next chapter.'",
+    body: "Year-end letter from Dara sent to all members. Introduces 'From Membership to Movement' explicitly. Members are invited to the AGG in Mérida as 'one of the key places where we begin co-designing this next chapter.'",
     annotations: [
-      { type: "note", label: "Note", text: "Members are invited to 'begin co-designing' at the AGG — language that implies the vision is still open. In practice the vision is already substantially formed at this point." }
+      { type: "note", label: "Note", text: "Members are invited to 'begin co-designing' at the AGG — language that implies the vision is still open. In practice the vision is already substantially formed at this point. This gap between the language of openness and the reality of a formed vision will create friction at the AGG and beyond." }
     ]
   },
+
+  // ── 2026 ──────────────────────────────────────────────────────────────────
+  { _year: "2026" },
+
   {
     date: "Mid-January 2026",
     title: "2026 Workplan developed across teams.",
@@ -262,11 +262,12 @@ const entries = [
   },
   {
     date: "Early February 2026",
-    title: "Multi-stakeholder framing scaled back.",
+    title: "Multi-stakeholder framing scaled back. Three shifts become the frame.",
     type: "decision", member: false, staff: false,
-    body: "A decision is made to pull back the multi-stakeholder focus from the vision — specifically the framing around engaging policymakers, grassroots actors, and non-wealth-holders as part of Toniic's core work. This had been one of the named shifts in earlier versions.",
+    body: "A decision is made to pull back the multi-stakeholder focus from the vision's named shifts — specifically the framing around engaging policymakers, grassroots actors, and non-wealth-holders as core to Toniic's work. Christine flags the change. The three shifts that remain: (1) individual to collective action, (2) impact investing to integrated capital approach, (3) measurement for justification to measurement for learning.\n\n'Integrated capital approach' is the language chosen to hold multi-stakeholder + polycapital + broadened toolset — deliberately less triggering than 'multi-stakeholder.' The trade-off is that it becomes less legible. Board members Charlie and Terrell push back on 'integrated capital approach' as unfamiliar jargon at the AGG.",
     annotations: [
-      { type: "note", label: "Note", text: "The research actually holds both sides of this tension simultaneously: members chafe against Toniic's insularity and want to engage a wider world — and they also value the safety of wealth-holder-only spaces, where honest conversation about money is possible without judgment or performance. These two things are genuinely in tension. The decision to scale back multi-stakeholder framing responds to the safety concern — but it does so by choosing one side of the tension rather than sitting with both." }
+      { type: "note", label: "Note", text: "Dara describes the integrated capital framing as an intentional 'soft pedal' — keeping the multi-stakeholder idea present but not leading with it. The multi-stakeholder concept is still in the vision document; it is de-emphasized in what gets foregrounded at the AGG." },
+      { type: "tension", label: "Tension", text: "The research holds both sides of this tension simultaneously: members chafe against Toniic's insularity and want to engage a wider world — and they also value the safety of wealth-holder-only spaces. The decision to scale back multi-stakeholder framing responds to the safety concern. It does so by choosing one side of the tension rather than holding both." }
     ]
   },
   {
@@ -287,81 +288,154 @@ const entries = [
   },
   {
     date: "February 19–22, 2026",
-    title: "AGG, Mérida. Vision summary presented. IWF runs sessions.",
+    title: "AGG, Mérida. Vision presented. IWF runs first co-design sessions.",
     type: "event", member: true, staff: false,
-    body: "Approximately 50 members attend. Dara presents a summary of the emerging vision — close to the current version — though members weren't specifically primed to expect an organizational strategy conversation alongside the usual conference programming.\n\nIWF runs co-design sessions using games and exercises to surface member values. Three sessions introduced the concept of prototyping; attendance was uneven as they were optional. Toward the end, a session explaining IWF's design research methodology and findings was added — not originally planned. Member response to this was positive.",
+    body: "Approximately 50 members attend. Dara presents a summary of the emerging vision in the opening plenary. Members weren't specifically primed to expect an organizational strategy conversation alongside the usual conference programming.\n\nIWF runs co-design sessions focused on Shift 1 (individual to collective action) — a deliberate choice by Dara not to lead with multi-stakeholder. The sessions use games and exercises to surface member values and test prototyping approaches. Attendance is uneven; sessions are optional. A session explaining IWF's design research methodology and findings is added late — not originally planned — and gets positive response. The co-design booklet IWF brings uses the original four scenarios (provocations), not the board's container, creating some confusion for members.\n\nDara describes feeling lukewarm about the co-design results — attendance is too small to draw strong conclusions, and one session is disrupted by an uninvited participant throughout. The AGG is framed, in retrospect, as a first attempt to test how co-design works in the Toniic environment — a launch pad for learning, not substantive co-design in itself.",
     annotations: [
-      { type: "note", label: "Member reaction", text: "Some members experienced the collective action framing as politically charged or as something that might constrain their individual choices — a reading the vision hadn't anticipated. For some, it landed as a bigger shift than intended." },
-      { type: "note", label: "Note", text: "Members responded well to the methodology explanation — suggesting that understanding the process behind the vision mattered as much as the vision itself." },
-      { type: "gap", label: "Gap", text: "No IWF report was produced from the AGG. What members said, what was learned, and how it informed anything downstream isn't documented." }
+      { type: "note", label: "Member reaction", text: "Some members experience the collective action framing as politically charged or as something that might constrain their individual choices — a reading the vision hadn't anticipated. Feedback comes from EMEA members (three named individuals) and from APAC. Adam also relays that some members heard 'collective action' and thought: too communist, too activist. Dara says she was surprised — she thought it was 'motherhood and apple pie.'" },
+      { type: "note", label: "Note", text: "Members respond well to the methodology explanation — suggesting that understanding the process behind the vision mattered as much as the vision itself. This is a signal worth holding for future communications." },
+      { type: "gap", label: "Gap", text: "No IWF report has been produced from the AGG sessions. What members said, what was learned, and how it informs what comes next isn't documented. Dara asks Sarah repeatedly for a plan beyond the AGG; the answer is: build on what we learn about what works and where there's energy." }
     ]
   },
   {
     date: "February–March 2026",
-    title: "Two documents emerge reflecting different assumptions about next steps.",
+    title: "Two documents emerge independently. They don't speak to each other.",
     type: "tension", member: false, staff: false,
-    body: "In roughly the same period, two significant pieces of work are produced independently — and they don't agree on where things stand.",
+    body: "In roughly the same period, two significant pieces of work are produced — and they don't agree on where things stand or what comes next.",
     annotations: [
-      { type: "tension", label: "Document 1", text: "Dario produces an early draft implementation proposal outlining 7 pilots and oriented toward building — here is what we are building, here is who owns what. It assumes the vision is ready to be operationalized." },
-      { type: "tension", label: "Document 2", text: "IWF produces a reflective document raising questions about whether the foundations are in place. Missing pieces identified: prototyping plan, communications strategy, decision-making structures, staff engagement strategy, shared learning frame." },
-      { type: "gap", label: "Gap", text: "It would be helpful to understand which set of assumptions is currently guiding the work." }
-    ]
-  },
-  {
-    date: "March 17, 2026",
-    title: "Classic/Labs framing introduced to management team.",
-    type: "decision_suspected", member: false, staff: true,
-    body: "Dara introduces a framing of 'Toniic Classic' and 'Toniic Labs' to the management team — a distinction between continuing business as usual and the experimental vision work. The framing helps hold both realities without one canceling the other out.",
-    annotations: [
-      { type: "note", label: "Note", text: "Whether this represents a formal decision or an emerging framing isn't yet clear. It was introduced verbally in a management meeting — not documented in writing as far as I know." },
-      { type: "gap", label: "Gap", text: "How the Classic/Labs distinction will be communicated internally and externally, and what it means operationally, hasn't been defined." }
+      { type: "tension", label: "Document 1: Dario's pilots proposal", text: "Dario produces an early draft implementation proposal outlining pilots, oriented toward building — here is what we are building, here is who owns what. It assumes the vision is ready to be operationalized. Dara asks him to zoom out: not just programming, but a fuller operational plan with implications across the organization, drawing explicit connections between the staff retreat and the decisions being made." },
+      { type: "tension", label: "Document 2: IWF's 'what next' document", text: "Sarah produces a reflective document (dated around March 11) raising questions about whether the foundations are in place. Her diagnostic: pace of ideas is outstripping foundational work; staff and members are solution-oriented; what's missing is articulation of assumptions, journey mapping, and a framework linking interactions to determinants of change. She identifies five needs: a prototyping plan, a communications strategy, decision-making structures, a staff engagement strategy, and coherence without control." },
+      { type: "gap", label: "Gap", text: "Dara flags that these two documents don't talk to each other and she is trying to bridge them. 'I can't just move on Sarah's pace. I have a whole staff team and a board that are chomping.'" }
     ]
   },
   {
     date: "Early March 2026",
-    title: "Toniic Community Conversation scope decided. Prototyping approach set aside.",
+    title: "April 1 session scope decided. Another introduction, not co-design.",
     type: "decision", member: false, staff: false,
-    body: "In early March, a more participatory session is considered for April 1 — one focused on prototyping, consistent with IWF's original process design and the co-design phases that hadn't happened at scale.\n\nAround March 9, the decision shifts: given that most members haven't yet had a basic introduction to the vision or the design research methodology, the session becomes primarily informational — presenting the vision and walking through the design research approach. Essentially a redo of the two informational moments from the AGG, now available to members who weren't in Mérida.",
+    body: "In early March, a more participatory session is considered for April 1 — one focused on prototyping, consistent with IWF's original process design and the co-design phases that hadn't happened at scale.\n\nAround March 9, the decision shifts: given that most members haven't yet had a basic introduction to the vision or the design research methodology, the session becomes primarily informational — presenting the vision and walking through the design research approach. Essentially a condensed version of the two informational moments from the AGG, now available to the 350+ members who weren't in Mérida.",
     annotations: [
-      { type: "note", label: "Note", text: "The session is titled 'Toniic Community Conversation: Emerging Vision' (April 1, Americas/EMEA; April 2, APAC)." },
-      { type: "question", label: "Open question", text: "Is the plan to move toward more participatory sessions after the Toniic Community Conversation? What does the sequence look like from here?" }
+      { type: "note", label: "Note", text: "The decision to make it introductory rather than participatory is in part reactive: the vision is already circulating among ~100 members, and doing nothing risks a growing group with partial information. Dara describes it as addressing an asymmetry: 'some people have it and some haven't.'" },
+      { type: "question", label: "Open question", text: "When does substantive co-design begin? The AGG was a first test. April 1 is another introduction. The Collab framework is being built. But the co-design phases from the original IWF proposal — the ones that were supposed to happen before the board retreat — still haven't happened at scale with members." }
+    ]
+  },
+  {
+    date: "~March 11, 2026",
+    title: "Sarah produces 'what next' document. Global Stewardship Circle proposed. Framework first thoughts.",
+    type: "event", member: false, staff: false,
+    body: "Sarah produces a working document — part diagnostic, part framework sketch, part next steps — ahead of the leadership team conversations later in the month.\n\nHer observations include: 'collective action' is so broad it risks meaning everything and nothing; staff and members are solution-oriented in ways that skip assumption-articulation; Toniic is already doing behavior change work without the science or infrastructure to do it well; the biggest risk of the vision is that collective action becomes anything and everything.\n\nShe proposes the Global Stewardship Circle: a small group of 8–12 members (not a governance body) who guide, challenge, and strengthen the Toniic Co-lab work. Criteria include: experience in collective action or systems change, humility and curiosity, commitment to 6–8 virtual meetings in 2026 and one in-person regional gathering. A possible names list is included: Carl Palmer, Upkar Arora, Amy Brakeman, Lisa Renstrom, Hedda Pahlson-Moller, Laura Francis, and potentially a staff person.\n\nShe also sketches a first version of what becomes the COM-B × systems levels framework — mapping existing and future Toniic interventions against motivation/capability/opportunity buckets and micro/meso/macro system levels.",
+    annotations: [
+      { type: "note", label: "Note", text: "The Global Stewardship Circle is Sarah's proposal, not Dara's. Dara picks it up and introduces it to the management team on March 17, framing it as something she and Sarah are developing together. The distinction matters: it originated in IWF's process logic, not in Dara's organizational instincts." },
+      { type: "note", label: "Note", text: "Sarah's three-level support tiers — member-driven (DIY tools), staff-driven, and stewarded (most resource-intensive, full IWF facilitation support) — are also introduced in this document. Governance criteria for which prototypes get stewarded support are flagged as still to be determined." }
     ]
   },
   {
     date: "March 16, 2026",
-    title: "All-member communication. Dara writes vision intro directly. Toniic Community Conversation announced.",
+    title: "All-member Pulse. Dara writes intro directly. Community Conversation announced.",
     type: "event", member: true, staff: false,
-    body: "Dara writes the Pulse intro directly for the first time, naming the emerging vision conversation explicitly. The broadest single send yet — the first time the vision has been communicated this directly to all members.\n\nThe opening paragraph is itself indicative of the vision's direction — not just announcing an event but modeling the tone and framing of the next chapter. Toniic Community Conversation: Emerging Vision announced — Americas/EMEA: April 1; APAC: April 2.",
+    body: "Dara writes the Pulse intro directly for the first time, naming the emerging vision conversation explicitly. The broadest single send yet — the first time the vision has been communicated this directly to all members.\n\nThe opening paragraph models the tone and framing of the next chapter. Toniic Community Conversation: Emerging Vision announced — Americas/EMEA: April 1; APAC: April 2.",
     annotations: []
   },
   {
-    date: "Mid-March 2026",
-    title: "Conversations about a framework and staff training begin.",
-    type: "event", member: false, staff: false,
-    body: "Dara and Sarah are working toward a framework to organize the vision work — drawing on behavioral change principles to structure how Toniic supports members and staff. The framework has multiple layers: organizing by impact goal, and by behavioral change strategy (strengthening motivation, building capability, creating opportunities to practice).\n\nAlongside this, a staff training oriented around a learning approach is being developed — with the possibility of recording it for wider use. Both the framework and the training are still being refined.\n\nA clearer distinction is also being explored between 'Toniic business as usual' and a separate protected space for experimentation — so that not everything feels like it's in flux at once.",
+    date: "March 17, 2026 (morning)",
+    title: "Management team meeting. Classic/Collab framing introduced. 'Movement' language questioned. GSC shared.",
+    type: "event", member: false, staff: true,
+    body: "Dara leads the management team through a strategy check-in coming out of the AGG. Several threads emerge.\n\nClassic / Collab framing: Dara introduces — for the first time with this group — the idea of 'Toniic Classic' (business as usual) running in parallel with 'Toniic Co-lab' (the R&D / prototyping arm). The naming is still in flux; Dara tests several words in real time (Innovate, Experiment, Lab). Sean pushes back that he doesn't see a programmatic distinction in practice. Daniela argues strongly for role clarity and single accountability — someone needs to own whether an initiative met its objectives. Dara confirms Dario is that person for programs under both tracks. Dara describes the two tracks as more of a Venn diagram than two separate pillars.\n\n'Membership to Movement' under review: Dara shares that the word 'movement' is probably incoherent for a wealth-holder-only community — movements are historically multi-stakeholder. The alliteration was partly accidental. The vision title may change; the shifts remain. 'Collective action' is also getting pushback — some members read it as politically charged (socialist/communist connotations). No decision made on either term. Daniela distinguishes between a stylistic change (finding better words for the same thing) and a substantive change (saying a different thing), and asks Dara to be clear which is happening.\n\nGlobal Stewardship Circle: Dara introduces the concept — framing it as something she and Sarah are developing — and shares the emerging criteria. 8–12 members, guiding and sense-making (not governing), curated not open call. Carl Palmer is named as the archetype. Dara notes she sees it as a fundraising and investment pathway as well as a stewardship mechanism.\n\nPhases 2 and 3: Sean asks directly about time horizon. Dara confirms Phases 2 and 3 are the plan for 2026 — acknowledging that Phase 1 and 2 were originally planned for 2025, and they didn't happen.",
     annotations: [
-      { type: "question", label: "Open question", text: "How will the framework be finalized, shared, and used to organize the pilots and other work? What is the timeline for the staff training?" }
+      { type: "tension", label: "Tension", text: "Toniic Classic has no goals yet. Daniela raises this directly: if Classic runs in parallel, what guides decisions there? The previous strategic plan? Dara doesn't have an answer. Decisions in Classic are currently being made on resourcing and capacity grounds alone — not against long-term goals." },
+      { type: "gap", label: "Gap", text: "Role clarity and decision-making authority are flagged as confused at multiple levels — execution level and above-my-pay-grade decisions alike. Dara acknowledges it and connects it to the restructuring's original intent (which was partly to create more clarity) that didn't fully land." }
+    ]
+  },
+  {
+    date: "March 17, 2026 (afternoon)",
+    title: "Sarah presents COM-B + systems levels framework. Dario, Dara, Daniela.",
+    type: "event", member: false, staff: true,
+    body: "Sarah presents a draft organizing framework to Dara, Dario, and Daniela. The framework has two interlocking layers:\n\n1. COM-B behavior change layer: motivation, capability, and opportunity must all shift simultaneously for behavior change to happen. This becomes the organizing logic for what Toniic's interventions are actually doing — and what's missing. Sarah observes that most of Toniic's current offerings sit in the motivation bucket (peer gatherings, inspirational content) but not capability or opportunity.\n\n2. Bronfenbrenner's systems levels: micro (individual/family), meso (community/regional), macro (global/financial system). Members are motivated by different levels — no hierarchy, all legitimate. The framework allows mapping interventions against both axes.\n\nSarah also presents three tiers of prototype support: member-driven (DIY tools), staff-driven, and stewarded (full IWF facilitation — most resource-intensive, governance criteria still TBD). A staff learning session is planned for the following week: IWF will run a one-hour session on prototyping vs. pilots for the full team.",
+    annotations: [
+      { type: "note", label: "Note", text: "A key insight: not everything Toniic currently does is oriented toward collective action as the behavior change target — some things are about making better individual investors. Whether to continue those things is a live question. The framework makes this visible for the first time." },
+      { type: "tension", label: "Tension", text: "Dario continues to use the word 'pilots' throughout this conversation; Sarah flags that Thursday's learning session will begin to distinguish pilots from prototypes. The gap between his instinct (build programs, run pilots) and what the process needs (learning infrastructure, governance, sequencing logic) is still present." },
+      { type: "note", label: "Sequence note", text: "This meeting happens after the morning management team meeting — meaning the Classic/Collab framing and Global Stewardship Circle are introduced to the management team first, then layered with the COM-B framework in this smaller session." }
+    ]
+  },
+  {
+    date: "Late March 2026",
+    title: "Board meeting prep. Heightened financial anxiety. Hard deadline.",
+    type: "tension", member: false, staff: false,
+    body: "Dara has a hard deadline: present a strategy update to the board within a week. Coming out of a finance committee meeting, she reports heightened anxiety about Toniic's financial position. Membership continues to decline — 11 cancellations in March alone, already under the conservative budget target.\n\nThe board presentation needs to answer: how are we actualizing the vision, and how does that intersect with business as usual? Dara wants to present the Classic/Collab framing, Sarah's COM-B framework (in accessible form), and some sense of milestones and sequencing. Sarah commits to providing a timeline by Monday/Tuesday. Dario is asked to produce a Collab-oriented sketch of prototypes and an overlay of existing Toniic activities against the framework. Dario also produces a detailed set of implementation questions (dated March 18) covering pilot/prototype definition, decision-making, resourcing, member engagement, and technology.",
+    annotations: [
+      { type: "tension", label: "Tension", text: "The board is being asked to receive a framework for future prototyping at a moment when they are likely most anxious about near-term financial stability. The design process operates on a learning orientation; the board may be looking for a roadmap. These are not the same thing." },
+      { type: "gap", label: "Gap", text: "Three things still unresolved going into the board meeting: what lives in Classic vs. Collab and what gets cut; governance criteria for stewarded prototypes (who decides, on what basis); and a clear timeline from Sarah for what happens after April 1." }
+    ]
+  },
+  {
+    date: "March 26, 2026 (upcoming)",
+    title: "All-staff learning session. IWF: prototyping vs. pilots.",
+    type: "event", member: false, staff: true,
+    body: "IWF takes over the all-team meeting to run a one-hour session on prototyping vs. pilots — what the distinction means, why it matters, and how a learning orientation differs from a solution-implementation orientation. Sarah plans to share observations about Toniic specifically: the tendency to identify a problem, develop a solution singularly, and drive forward without building in feedback loops. This is described as the 'tip of a longer learning journey' for staff and eventually members.",
+    annotations: [
+      { type: "note", label: "Note", text: "The pilot vs. prototype distinction has been flagged as unresolved in multiple conversations. Dario uses 'pilot' throughout his documents in a more operational sense; Sarah uses 'prototype' in a design-process sense. Getting shared language in place before the board meeting is part of what this session is meant to do." }
     ]
   },
   {
     date: "April 1–2, 2026 (upcoming)",
-    title: "Toniic Community Conversation: Emerging Vision. April 1–2.",
+    title: "Toniic Community Conversation: Emerging Vision.",
     type: "event", member: true, staff: false,
-    body: "90-minute virtual session. Dara and IWF present. Design research shared with members for the first time. Vision presented. Session focused on visibility and member awareness — IWF will use interactive exercises to create space for engagement. APAC version on April 2.",
+    body: "90-minute virtual session. Dara and IWF present. Design research shared with members for the first time at this scale. Vision presented. Session focused on visibility and member awareness — IWF will use interactive exercises to create space for engagement. APAC version on April 2.\n\nDara plans to use the session to model learning in real time — including sharing that 'membership to movement' may not be the right frame, as a demonstration of how the vision is being iterated based on feedback.",
     annotations: [
-      { type: "question", label: "Open question", text: "What happens after April 1? Who captures what members said? How does it feed into what comes next?" },
-      { type: "gap", label: "Gap", text: "The goal of the session beyond visibility hasn't been formally defined yet." }
+      { type: "question", label: "Open question", text: "What happens after April 1? Who captures what members said? How does it feed into what comes next? What is the plan for moving from repeated introductions into actual co-design?" }
     ]
   },
   {
     date: "April 2, 2026 (upcoming)",
     title: "Board meeting.",
     type: "event", member: false, staff: false,
-    body: "Board meeting takes place. Toniic Community Conversation: Emerging Vision will have occurred just prior.",
+    body: "Board meeting. Toniic Community Conversation will have occurred the day prior. Dara, Dario, and Sarah are all expected to contribute complementary pieces — Classic/Collab framing, framework overview, prototype sketches, and milestones.",
+    annotations: [
+      { type: "tension", label: "Tension", text: "Membership is declining. The board is financially anxious. The design process is still building its infrastructure. The 60-day commitment Dara made to staff at the staff retreat is also coming due. These pressures are converging on the same moment." }
+    ]
+  },
+
+  // ── HORIZON ───────────────────────────────────────────────────────────────
+  { _year: "Horizon" },
+
+  {
+    date: "June 23–24, 2026",
+    title: "Regional gathering: New York City.",
+    type: "event", member: true, staff: false,
+    body: "Member Gathering + 100% Network Gathering in New York City. One of three regional gatherings planned for 2026. The question of how Co-lab shows up at regional gatherings — introduction only, or active prototyping space — is unresolved.",
+    annotations: [
+      { type: "question", label: "Open question", text: "Does Co-lab run sessions at regional gatherings? Is it a design sprint for those who want to prototype, or just an awareness moment for all? Who is invited to participate, and how are they prepared in advance?" }
+    ]
+  },
+  {
+    date: "September 14–15, 2026",
+    title: "Regional gathering: Kobe, Japan.",
+    type: "event", member: true, staff: false,
+    body: "Member Gathering in Kobe, Japan. Second of three 2026 regional gatherings.",
     annotations: []
   },
   {
-    date: "Beyond April 2026",
+    date: "October 10–12, 2026",
+    title: "Board Retreat: London.",
+    type: "event", member: false, staff: false,
+    body: "Board retreat in London.",
+    annotations: []
+  },
+  {
+    date: "October 13–14, 2026",
+    title: "Regional gathering: London.",
+    type: "event", member: true, staff: false,
+    body: "Member Gathering + 100% Network Gathering in London. Third of three 2026 regional gatherings.",
+    annotations: []
+  },
+  {
+    date: "March 10–14, 2027",
+    title: "Next AGG: Palamos, Spain (near Barcelona).",
+    type: "event", member: true, staff: false,
+    body: "Annual Global Gathering + 100% Network Gathering in Palamos, Spain.",
+    annotations: []
+  },
+  {
+    date: "Beyond",
     title: "What next?",
     type: "whatnext", member: false, staff: false,
     body: null, annotations: []
@@ -371,6 +445,14 @@ const entries = [
 const track = document.getElementById("track");
 
 entries.forEach((entry, i) => {
+  if (entry._year) {
+    const marker = document.createElement("div");
+    marker.className = "year-marker";
+    marker.textContent = entry._year;
+    track.appendChild(marker);
+    return;
+  }
+
   const el = document.createElement("div");
   el.className = "entry";
   const isBlueprint = entry.type === "blueprint";
